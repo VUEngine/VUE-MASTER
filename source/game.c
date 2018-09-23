@@ -43,8 +43,8 @@ int main(void)
 	);
 
     // start the game
-	Game_start(Game::getInstance(), GameState::safeCast(AdjustmentScreenState::getInstance()));
-	//Game_start(Game::getInstance(), GameState::safeCast(VueMasterState::getInstance()));
+	//Game_start(Game::getInstance(), GameState::safeCast(AdjustmentScreenState::getInstance()));
+	Game_start(Game::getInstance(), GameState::safeCast(VueMasterState::getInstance()));
 
 	// end program
 	return true;

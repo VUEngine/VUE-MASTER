@@ -28,266 +28,129 @@
 //---------------------------------------------------------------------------------------------------------
 
 #include <AnimatedEntity.h>
-#include <BgmapSprite.h>
-#include <VueMasterState.h>
+#include <BgmapAnimatedSprite.h>
 
 
 //---------------------------------------------------------------------------------------------------------
-// 												DECLARATIONS
+//												DECLARATIONS
 //---------------------------------------------------------------------------------------------------------
 
 extern BYTE VueMasterImage10Tiles[];
-extern BYTE VueMasterImage10L1Map[];
-extern BYTE VueMasterImage10L2Map[];
-extern BYTE VueMasterImage10R1Map[];
-extern BYTE VueMasterImage10R2Map[];
+extern BYTE VueMasterImage10Map[];
 
 
 //---------------------------------------------------------------------------------------------------------
-// 												DEFINITIONS
+//												DEFINITIONS
 //---------------------------------------------------------------------------------------------------------
+
+AnimationFunctionROMDef VUE_MASTER_IMAGE_10_DEFAULT_ANIM =
+{
+	// number of frames of this animation function
+	3,
+
+	// frames to play in animation
+	{
+		0, 1, 2,
+	},
+
+	// number of cycles a frame of animation is displayed
+	1,
+
+	// whether to play it in loop or not
+	true,
+
+	// method to call on function completion
+	NULL,
+
+	// function's name
+	"Default",
+};
+
+// an animation definition
+AnimationDescriptionROMDef VUE_MASTER_IMAGE_10_ANIM =
+{
+	// animation functions
+	{
+		(AnimationFunction*)&VUE_MASTER_IMAGE_10_DEFAULT_ANIM,
+
+		NULL,
+	}
+};
 
 CharSetROMDef VUE_MASTER_IMAGE_10_CH =
 {
 	// number of chars, depending on allocation type:
 	// __ANIMATED_SINGLE*, __ANIMATED_SHARED*: number of chars of a single animation frame (cols * rows)
 	// __ANIMATED_MULTI, __NOT_ANIMATED: sum of all chars
-    1521,
+	13,
 
-    // allocation type
-    // (__ANIMATED_SINGLE, __ANIMATED_SINGLE_OPTIMIZED, __ANIMATED_SHARED, __ANIMATED_SHARED_COORDINATED, __ANIMATED_MULTI or __NOT_ANIMATED)
-    __NOT_ANIMATED,
+	// allocation type
+	// (__ANIMATED_SINGLE, __ANIMATED_SINGLE_OPTIMIZED, __ANIMATED_SHARED, __ANIMATED_SHARED_COORDINATED, __ANIMATED_MULTI or __NOT_ANIMATED)
+	__ANIMATED_SINGLE_OPTIMIZED,
 
-    // char definition
-    VueMasterImage10Tiles,
+	// char definition
+	VueMasterImage10Tiles,
 };
 
-TextureROMDef VUE_MASTER_IMAGE_10_LEFT_1_TX =
+TextureROMDef VUE_MASTER_IMAGE_10_TX =
 {
-    // charset definition
-    (CharSetDefinition*)&VUE_MASTER_IMAGE_10_CH,
+	// charset definition
+	(CharSetDefinition*)&VUE_MASTER_IMAGE_10_CH,
 
-    // bgmap definition
-    VueMasterImage10L1Map,
+	// bgmap definition
+	VueMasterImage10Map,
 
-    // cols (max 64)
-    48,
+	// cols (max 64)
+	48,
 
-    // rows (max 64)
-    28,
+	// rows (max 64)
+	28,
 
-    // padding for affine/hbias transformations (cols, rows)
+	// padding for affine transformations
 	{0, 0},
 
 	// number of frames, depending on charset's allocation type:
-    // __ANIMATED_SINGLE, _SHARED, _SHARED_COORDINATED, __NOT_ANIMATED: 1
-    // __ANIMATED_MULTI: total number of frames
-    1,
+	// __ANIMATED_SINGLE*, __ANIMATED_SHARED*, __NOT_ANIMATED: 1
+	// __ANIMATED_MULTI: total number of frames
+	1,
 
-    // palette number (0-3)
-    0,
+	// palette number (0-3)
+	0,
 
 	// recyclable
 	true,
 };
 
-TextureROMDef VUE_MASTER_IMAGE_10_LEFT_2_TX =
+BgmapSpriteROMDef VUE_MASTER_IMAGE_10_SPRITE =
 {
-    // charset definition
-    (CharSetDefinition*)&VUE_MASTER_IMAGE_10_CH,
+	{
+		// sprite's type
+		__TYPE(BgmapAnimatedSprite),
 
-    // bgmap definition
-    VueMasterImage10L2Map,
-
-    // cols (max 64)
-    48,
-
-    // rows (max 64)
-    28,
-
-    // padding for affine/hbias transformations (cols, rows)
-	{0, 0},
-
-	// number of frames, depending on charset's allocation type:
-    // __ANIMATED_SINGLE, _SHARED, _SHARED_COORDINATED, __NOT_ANIMATED: 1
-    // __ANIMATED_MULTI: total number of frames
-    1,
-
-    // palette number (0-3)
-    0,
-
-	// recyclable
-	true,
-};
-
-TextureROMDef VUE_MASTER_IMAGE_10_RIGHT_1_TX =
-{
-    // charset definition
-    (CharSetDefinition*)&VUE_MASTER_IMAGE_10_CH,
-
-    // bgmap definition
-    VueMasterImage10R1Map,
-
-    // cols (max 64)
-    48,
-
-    // rows (max 64)
-    28,
-
-    // padding for affine/hbias transformations (cols, rows)
-	{0, 0},
-
-	// number of frames, depending on charset's allocation type:
-    // __ANIMATED_SINGLE, _SHARED, _SHARED_COORDINATED, __NOT_ANIMATED: 1
-    // __ANIMATED_MULTI: total number of frames
-    1,
-
-    // palette number (0-3)
-    0,
-
-	// recyclable
-	true,
-};
-
-TextureROMDef VUE_MASTER_IMAGE_10_RIGHT_2_TX =
-{
-    // charset definition
-    (CharSetDefinition*)&VUE_MASTER_IMAGE_10_CH,
-
-    // bgmap definition
-    VueMasterImage10R2Map,
-
-    // cols (max 64)
-    48,
-
-    // rows (max 64)
-    28,
-
-    // padding for affine/hbias transformations (cols, rows)
-	{0, 0},
-
-	// number of frames, depending on charset's allocation type:
-    // __ANIMATED_SINGLE, _SHARED, _SHARED_COORDINATED, __NOT_ANIMATED: 1
-    // __ANIMATED_MULTI: total number of frames
-    1,
-
-    // palette number (0-3)
-    0,
-
-	// recyclable
-	true,
-};
-
-BgmapSpriteROMDef VUE_MASTER_IMAGE_10_LEFT_1_SPRITE =
-{
-    {
-        // sprite's type
-        __TYPE(BgmapSprite),
-
-        // texture definition
-        (TextureDefinition*)&VUE_MASTER_IMAGE_10_LEFT_1_TX,
+		// texture definition
+		(TextureDefinition*)&VUE_MASTER_IMAGE_10_TX,
 
 		// transparent (__TRANSPARENCY_NONE, __TRANSPARENCY_EVEN or __TRANSPARENCY_ODD)
 		__TRANSPARENCY_NONE,
 
-        // displacement
-        {0, 0, 0, 0},
-    },
+		// displacement
+		{0, 0, 0, 0},
+	},
 
-	// bgmap mode (__WORLD_BGMAP, __WORLD_AFFINE, __WORLD_OBJ or __WORLD_HBIAS)
+	// bgmap mode (__WORLD_BGMAP, __WORLD_AFFINE, __WORLD_OBJECT or __WORLD_HBIAS)
+	// make sure to use the proper corresponding sprite type throughout the definition (BgmapSprite or ObjectSprite)
 	__WORLD_BGMAP,
 
-	// pointer to affine/hbias manipulation function
+	// pointer to affine / hbias manipulation function
 	NULL,
 
 	// display mode (__WORLD_ON, __WORLD_LON or __WORLD_RON)
-	__WORLD_LON,
-};
-
-BgmapSpriteROMDef VUE_MASTER_IMAGE_10_LEFT_2_SPRITE =
-{
-    {
-        // sprite's type
-        __TYPE(BgmapSprite),
-
-        // texture definition
-        (TextureDefinition*)&VUE_MASTER_IMAGE_10_LEFT_2_TX,
-
-		// transparent (__TRANSPARENCY_NONE, __TRANSPARENCY_EVEN or __TRANSPARENCY_ODD)
-		__TRANSPARENCY_EVEN,
-
-        // displacement
-        {0, 0, 0, 0},
-    },
-
-	// bgmap mode (__WORLD_BGMAP, __WORLD_AFFINE, __WORLD_OBJ or __WORLD_HBIAS)
-	__WORLD_BGMAP,
-
-	// pointer to affine/hbias manipulation function
-	NULL,
-
-	// display mode (__WORLD_ON, __WORLD_LON or __WORLD_RON)
-	__WORLD_LON,
-};
-
-BgmapSpriteROMDef VUE_MASTER_IMAGE_10_RIGHT_1_SPRITE =
-{
-    {
-        // sprite's type
-        __TYPE(BgmapSprite),
-
-        // texture definition
-        (TextureDefinition*)&VUE_MASTER_IMAGE_10_RIGHT_1_TX,
-
-		// transparent (__TRANSPARENCY_NONE, __TRANSPARENCY_EVEN or __TRANSPARENCY_ODD)
-		__TRANSPARENCY_NONE,
-
-        // displacement
-        {0, 0, 0, 0},
-    },
-
-	// bgmap mode (__WORLD_BGMAP, __WORLD_AFFINE, __WORLD_OBJ or __WORLD_HBIAS)
-	__WORLD_BGMAP,
-
-	// pointer to affine/hbias manipulation function
-	NULL,
-
-	// display mode (__WORLD_ON, __WORLD_LON or __WORLD_RON)
-	__WORLD_RON,
-};
-
-BgmapSpriteROMDef VUE_MASTER_IMAGE_10_RIGHT_2_SPRITE =
-{
-    {
-        // sprite's type
-        __TYPE(BgmapSprite),
-
-        // texture definition
-        (TextureDefinition*)&VUE_MASTER_IMAGE_10_RIGHT_2_TX,
-
-		// transparent (__TRANSPARENCY_NONE, __TRANSPARENCY_EVEN or __TRANSPARENCY_ODD)
-		__TRANSPARENCY_EVEN,
-
-        // displacement
-        {0, 0, 0, 0},
-    },
-
-	// bgmap mode (__WORLD_BGMAP, __WORLD_AFFINE, __WORLD_OBJ or __WORLD_HBIAS)
-	__WORLD_BGMAP,
-
-	// pointer to affine/hbias manipulation function
-	NULL,
-
-	// display mode (__WORLD_ON, __WORLD_LON or __WORLD_RON)
-	__WORLD_RON,
+	__WORLD_ON,
 };
 
 BgmapSpriteROMDef* const VUE_MASTER_IMAGE_10_SPRITES[] =
 {
-	&VUE_MASTER_IMAGE_10_LEFT_1_SPRITE,
-	&VUE_MASTER_IMAGE_10_LEFT_2_SPRITE,
-	&VUE_MASTER_IMAGE_10_RIGHT_1_SPRITE,
-	&VUE_MASTER_IMAGE_10_RIGHT_2_SPRITE,
+	&VUE_MASTER_IMAGE_10_SPRITE,
 	NULL
 };
 
@@ -310,17 +173,17 @@ VueMasterImageROMDef VUE_MASTER_IMAGE_10_EN =
 			{0, 0, 0},
 
 			// gameworld's character's type
-			kNoType,
+			0,
 
 			// physical specification
 			(PhysicalSpecification*)NULL,
 		},
 
 		// pointer to the animation definition for the item
-		(AnimationDescription*)NULL,
+		(AnimationDescription*)&VUE_MASTER_IMAGE_10_ANIM,
 
 		// initial animation
-		NULL
+		"Default"
 	},
 
 	// colors config

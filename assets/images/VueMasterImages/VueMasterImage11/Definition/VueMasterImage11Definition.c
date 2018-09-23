@@ -35,10 +35,8 @@
 //												DECLARATIONS
 //---------------------------------------------------------------------------------------------------------
 
-extern BYTE VueMasterImage11LTiles[];
-extern BYTE VueMasterImage11LMap[];
-extern BYTE VueMasterImage11RTiles[];
-extern BYTE VueMasterImage11RMap[];
+extern BYTE VueMasterImage11Tiles[];
+extern BYTE VueMasterImage11Map[];
 
 
 //---------------------------------------------------------------------------------------------------------
@@ -48,15 +46,15 @@ extern BYTE VueMasterImage11RMap[];
 AnimationFunctionROMDef VUE_MASTER_IMAGE_11_DEFAULT_ANIM =
 {
 	// number of frames of this animation function
-	8,
+	2,
 
 	// frames to play in animation
 	{
-		0, 1, 2, 3, 4, 5, 6, 7
+		0, 1
 	},
 
 	// number of cycles a frame of animation is displayed
-	8,
+	1,
 
 	// whether to play it in loop or not
 	true,
@@ -79,28 +77,28 @@ AnimationDescriptionROMDef VUE_MASTER_IMAGE_11_ANIM =
 	}
 };
 
-CharSetROMDef VUE_MASTER_IMAGE_11_L_CH =
+CharSetROMDef VUE_MASTER_IMAGE_11_CH =
 {
 	// number of chars, depending on allocation type:
 	// __ANIMATED_SINGLE*, __ANIMATED_SHARED*: number of chars of a single animation frame (cols * rows)
 	// __ANIMATED_MULTI, __NOT_ANIMATED: sum of all chars
-	272,
+	37,
 
 	// allocation type
 	// (__ANIMATED_SINGLE, __ANIMATED_SINGLE_OPTIMIZED, __ANIMATED_SHARED, __ANIMATED_SHARED_COORDINATED, __ANIMATED_MULTI or __NOT_ANIMATED)
 	__ANIMATED_SINGLE_OPTIMIZED,
 
 	// char definition
-	VueMasterImage11LTiles,
+	VueMasterImage11Tiles,
 };
 
-TextureROMDef VUE_MASTER_IMAGE_11_L_TX =
+TextureROMDef VUE_MASTER_IMAGE_11_TX =
 {
 	// charset definition
-	(CharSetDefinition*)&VUE_MASTER_IMAGE_11_L_CH,
+	(CharSetDefinition*)&VUE_MASTER_IMAGE_11_CH,
 
 	// bgmap definition
-	VueMasterImage11LMap,
+	VueMasterImage11Map,
 
 	// cols (max 64)
 	48,
@@ -123,14 +121,14 @@ TextureROMDef VUE_MASTER_IMAGE_11_L_TX =
 	true,
 };
 
-BgmapSpriteROMDef VUE_MASTER_IMAGE_11_L_SPRITE =
+BgmapSpriteROMDef VUE_MASTER_IMAGE_11_SPRITE =
 {
 	{
 		// sprite's type
 		__TYPE(BgmapAnimatedSprite),
 
 		// texture definition
-		(TextureDefinition*)&VUE_MASTER_IMAGE_11_L_TX,
+		(TextureDefinition*)&VUE_MASTER_IMAGE_11_TX,
 
 		// transparent (__TRANSPARENCY_NONE, __TRANSPARENCY_EVEN or __TRANSPARENCY_ODD)
 		__TRANSPARENCY_NONE,
@@ -147,84 +145,12 @@ BgmapSpriteROMDef VUE_MASTER_IMAGE_11_L_SPRITE =
 	NULL,
 
 	// display mode (__WORLD_ON, __WORLD_LON or __WORLD_RON)
-	__WORLD_LON,
-};
-
-CharSetROMDef VUE_MASTER_IMAGE_11_R_CH =
-{
-	// number of chars, depending on allocation type:
-	// __ANIMATED_SINGLE*, __ANIMATED_SHARED*: number of chars of a single animation frame (cols * rows)
-	// __ANIMATED_MULTI, __NOT_ANIMATED: sum of all chars
-	260,
-
-	// allocation type
-	// (__ANIMATED_SINGLE, __ANIMATED_SINGLE_OPTIMIZED, __ANIMATED_SHARED, __ANIMATED_SHARED_COORDINATED, __ANIMATED_MULTI or __NOT_ANIMATED)
-	__ANIMATED_SINGLE_OPTIMIZED,
-
-	// char definition
-	VueMasterImage11RTiles,
-};
-
-TextureROMDef VUE_MASTER_IMAGE_11_R_TX =
-{
-	// charset definition
-	(CharSetDefinition*)&VUE_MASTER_IMAGE_11_R_CH,
-
-	// bgmap definition
-	VueMasterImage11RMap,
-
-	// cols (max 64)
-	48,
-
-	// rows (max 64)
-	28,
-
-	// padding for affine transformations
-	{0, 0},
-
-	// number of frames, depending on charset's allocation type:
-	// __ANIMATED_SINGLE*, __ANIMATED_SHARED*, __NOT_ANIMATED: 1
-	// __ANIMATED_MULTI: total number of frames
-	1,
-
-	// palette number (0-3)
-	0,
-
-	// recyclable
-	true,
-};
-
-BgmapSpriteROMDef VUE_MASTER_IMAGE_11_R_SPRITE =
-{
-	{
-		// sprite's type
-		__TYPE(BgmapAnimatedSprite),
-
-		// texture definition
-		(TextureDefinition*)&VUE_MASTER_IMAGE_11_R_TX,
-
-		// transparent (__TRANSPARENCY_NONE, __TRANSPARENCY_EVEN or __TRANSPARENCY_ODD)
-		__TRANSPARENCY_NONE,
-
-		// displacement
-		{0, 0, 0, 0},
-	},
-
-	// bgmap mode (__WORLD_BGMAP, __WORLD_AFFINE, __WORLD_OBJECT or __WORLD_HBIAS)
-	// make sure to use the proper corresponding sprite type throughout the definition (BgmapSprite or ObjectSprite)
-	__WORLD_BGMAP,
-
-	// pointer to affine / hbias manipulation function
-	NULL,
-
-	// display mode (__WORLD_ON, __WORLD_LON or __WORLD_RON)
-	__WORLD_RON,
+	__WORLD_ON,
 };
 
 BgmapSpriteROMDef* const VUE_MASTER_IMAGE_11_SPRITES[] =
 {
-	&VUE_MASTER_IMAGE_11_L_SPRITE,
-	&VUE_MASTER_IMAGE_11_R_SPRITE,
+	&VUE_MASTER_IMAGE_11_SPRITE,
 	NULL
 };
 
