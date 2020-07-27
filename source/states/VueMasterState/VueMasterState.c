@@ -119,7 +119,6 @@ void VueMasterState::exit(void* owner)
 
 void VueMasterState::printImageNumber()
 {
-	return;
 #if(__NUMBER_OF_VIEWER_IMAGES < 10)
 	if (this->showNumber)
 	{
