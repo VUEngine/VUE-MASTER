@@ -32,45 +32,6 @@
 
 const u16 BLIP_SND[] =
 {
-//songlength
-		2,
-//stdwait
-		0x0C,
-//stdSxLRV
-		0x55,
-//stdSxEV0
-		0x51,
-//stdSxEV1
-		0x01,
-//stdSxRAM
-		0x00,
-//stdS5SWP
-//song's notes
-		F_4,
-		F_5,
-		NONE,
-		NONE,
-		NONE,
-		C_3,
-		D_3,
-		NONE,
-		NONE,
-		NONE,
-		C_3,
-		D_3,
-		NONE,
-		NONE,
-		NONE,
-		C_3,
-		D_3,
-		NONE,
-		NONE,
-		NONE,
-		C_3,
-		D_3,
-		NONE,
-		NONE,
-		NONE,
 };
 
 

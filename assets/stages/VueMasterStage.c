@@ -69,6 +69,19 @@ StageROMSpec VUE_MASTER_ST =
 	// allocator
 	__TYPE(Stage),
 
+	// Timer config
+	{
+		__TIMER_100US,
+		1000,
+		kMS
+	},
+
+	// Sound config
+	{
+		__DEFAULT_PCM_HZ,
+		false
+	},
+
 	// level
 	{
         // size

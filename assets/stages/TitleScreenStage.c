@@ -32,7 +32,7 @@
 // 												DECLARATIONS
 //---------------------------------------------------------------------------------------------------------
 
-extern FontSpec VUENGINE_FONT;
+extern FontSpec DEFAULT_FONT;
 extern EntitySpec CREDITS_EN;
 extern EntitySpec HI_COLOR_SWITCH_AE;
 extern EntitySpec LOGO_AE;
@@ -60,7 +60,7 @@ PositionedEntityROMSpec TITLE_SCREEN_ST_CHILDREN[] =
 
 FontROMSpec* const TITLE_SCREEN_ST_FONTS[] =
 {
-	&VUENGINE_FONT,
+	&DEFAULT_FONT,
 
 	NULL
 };
@@ -74,6 +74,19 @@ StageROMSpec TITLE_SCREEN_ST =
 {
 	// allocator
 	__TYPE(Stage),
+
+	// Timer config
+	{
+		__TIMER_100US,
+		1000,
+		kMS
+	},
+
+	// Sound config
+	{
+		__DEFAULT_PCM_HZ,
+		false
+	},
 
 	// level
 	{

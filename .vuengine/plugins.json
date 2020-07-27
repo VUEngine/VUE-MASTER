@@ -1,5 +1,3 @@
-{
-	"plugins": [
-		"vuengine/states/SplashScreens"
-	]
-}
+[
+	"vuengine/states/SplashScreens"
+]

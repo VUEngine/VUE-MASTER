@@ -139,6 +139,12 @@ TextureROMSpec LOGO_L_TX =
 
 	// recyclable
 	false,
+
+	// vertical flip
+	false,
+
+	// horizontal flip
+	false,
 };
 
 BgmapSpriteROMSpec LOGO_L_SP =
@@ -212,6 +218,12 @@ TextureROMSpec LOGO_R_TX =
 
 	// recyclable
 	false,
+
+	// vertical flip
+	false,
+
+	// horizontal flip
+	false,
 };
 
 BgmapSpriteROMSpec LOGO_R_SP =
@@ -262,6 +274,9 @@ AnimatedEntityROMSpec LOGO_AE =
 		// sprites
 		(SpriteSpec**)LOGO_SPRITES,
 
+		// use z displacement in projection
+		false,
+
 		// collision shapes
 		(ShapeSpec*)NULL,
 
@@ -270,7 +285,7 @@ AnimatedEntityROMSpec LOGO_AE =
 		{0, 0, 0},
 
 		// gameworld's character's type
-		kNoType,
+		kTypeNone,
 
 		// physical specification
 		(PhysicalSpecification*)NULL,

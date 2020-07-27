@@ -114,6 +114,12 @@ TextureROMSpec PRESS_START_TX =
 
 	// recyclable
 	false,
+
+	// vertical flip
+	false,
+
+	// horizontal flip
+	false,
 };
 
 BgmapSpriteROMSpec PRESS_START_SP =
@@ -161,6 +167,9 @@ AnimatedEntityROMSpec PRESS_START_AG =
 		// sprites
 		(SpriteSpec**)PRESS_START_SPRITES,
 
+		// use z displacement in projection
+		false,
+
 		// collision shapes
 		(ShapeSpec*)NULL,
 
@@ -169,7 +178,7 @@ AnimatedEntityROMSpec PRESS_START_AG =
 		{0, 0, 0},
 
 		// gameworld's character's type
-		kNoType,
+		kTypeNone,
 
 		// physical specification
 		(PhysicalSpecification*)NULL,

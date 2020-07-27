@@ -119,6 +119,7 @@ void VueMasterState::exit(void* owner)
 
 void VueMasterState::printImageNumber()
 {
+	return;
 #if(__NUMBER_OF_VIEWER_IMAGES < 10)
 	if (this->showNumber)
 	{
@@ -163,7 +164,7 @@ void VueMasterState::switchImage()
 	}
 
 	// replace sprites
-	Entity::releaseSprites(Entity::safeCast(this->imageEntity), true);
+	Entity::releaseSprites(Entity::safeCast(this->imageEntity));
 	VueMasterImageROMSpec* vueMasterImageSpec = VUE_MASTER_ENTITIES[this->currentImage];
 	AnimatedEntityROMSpec* animatedEntitySpec = (AnimatedEntitySpec*)&(vueMasterImageSpec->animatedEntitySpec);
 	Entity::addSprites(Entity::safeCast(this->imageEntity), animatedEntitySpec->entitySpec.spriteSpecs);

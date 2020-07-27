@@ -18,8 +18,7 @@
 //												DECLARATIONS
 //---------------------------------------------------------------------------------------------------------
 
-extern FontSpec VUENGINE_FONT;
-extern FontSpec NUMBER_FONT;
+extern FontSpec DEFAULT_FONT;
 
 
 #endif

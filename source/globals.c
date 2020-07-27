@@ -34,12 +34,11 @@
 // 										DEFINITIONS
 //---------------------------------------------------------------------------------------------------------
 
-#ifdef __DEBUG_TOOLS
+#ifdef __TOOLS
 const ClassSizeData _userClassesSizeData[] =
 {
 	{NULL, ""},
 };
-#endif
 
 const UserObject _userObjects[] =
 {
@@ -50,3 +49,14 @@ const UserAnimatedEntity _userAnimatedEntities[] =
 {
 	{NULL, ""},
 };
+
+const SoundROM* _userSounds[] =
+{
+};
+
+const ToolState _userToolStates[] =
+{
+	NULL
+};
+
+#endif

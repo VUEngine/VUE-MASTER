@@ -61,6 +61,9 @@ FontROMSpec NUMBER_FONT =
 	// number of characters in this font
 	12,
 
+	// number of characters per line in charset
+	1,
+
 	// size of a single character (in chars) ({width, height})
 	{1, 1},
 

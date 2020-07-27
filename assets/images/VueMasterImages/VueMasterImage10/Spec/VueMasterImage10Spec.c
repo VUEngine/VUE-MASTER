@@ -84,11 +84,17 @@ TextureROMSpec VUE_MASTER_IMAGE_10_LEFT_1_TX =
     // __ANIMATED_MULTI: total number of frames
     1,
 
-    // palette number (0-3)
-    0,
+	// palette number (0-3)
+	0,
 
 	// recyclable
 	true,
+
+	// vertical flip
+	false,
+
+	// horizontal flip
+	false,
 };
 
 TextureROMSpec VUE_MASTER_IMAGE_10_LEFT_2_TX =
@@ -113,11 +119,17 @@ TextureROMSpec VUE_MASTER_IMAGE_10_LEFT_2_TX =
     // __ANIMATED_MULTI: total number of frames
     1,
 
-    // palette number (0-3)
-    0,
+	// palette number (0-3)
+	0,
 
 	// recyclable
 	true,
+
+	// vertical flip
+	false,
+
+	// horizontal flip
+	false,
 };
 
 TextureROMSpec VUE_MASTER_IMAGE_10_RIGHT_1_TX =
@@ -142,11 +154,17 @@ TextureROMSpec VUE_MASTER_IMAGE_10_RIGHT_1_TX =
     // __ANIMATED_MULTI: total number of frames
     1,
 
-    // palette number (0-3)
-    0,
+	// palette number (0-3)
+	0,
 
 	// recyclable
 	true,
+
+	// vertical flip
+	false,
+
+	// horizontal flip
+	false,
 };
 
 TextureROMSpec VUE_MASTER_IMAGE_10_RIGHT_2_TX =
@@ -171,11 +189,17 @@ TextureROMSpec VUE_MASTER_IMAGE_10_RIGHT_2_TX =
     // __ANIMATED_MULTI: total number of frames
     1,
 
-    // palette number (0-3)
-    0,
+	// palette number (0-3)
+	0,
 
 	// recyclable
 	true,
+
+	// vertical flip
+	false,
+
+	// horizontal flip
+	false,
 };
 
 BgmapSpriteROMSpec VUE_MASTER_IMAGE_10_LEFT_1_SPRITE =
@@ -305,7 +329,10 @@ VueMasterImageROMSpec VUE_MASTER_IMAGE_10_EN =
 			// sprites
 			(SpriteSpec**)VUE_MASTER_IMAGE_10_SPRITES,
 
-			// collision shapes
+			// use z displacement in projection
+		false,
+
+		// collision shapes
 			(ShapeSpec*)NULL,
 
 			// size
@@ -313,7 +340,7 @@ VueMasterImageROMSpec VUE_MASTER_IMAGE_10_EN =
 			{0, 0, 0},
 
 			// gameworld's character's type
-			kNoType,
+			kTypeNone,
 
 			// physical specification
 			(PhysicalSpecification*)NULL,

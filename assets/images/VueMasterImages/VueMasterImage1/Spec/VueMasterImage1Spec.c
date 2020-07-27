@@ -82,11 +82,17 @@ TextureROMSpec VUE_MASTER_IMAGE_1_LEFT_TX =
     // __ANIMATED_MULTI: total number of frames
     1,
 
-    // palette number (0-3)
-    0,
+	// palette number (0-3)
+	0,
 
 	// recyclable
 	true,
+
+	// vertical flip
+	false,
+
+	// horizontal flip
+	false,
 };
 
 TextureROMSpec VUE_MASTER_IMAGE_1_RIGHT_TX =
@@ -111,11 +117,17 @@ TextureROMSpec VUE_MASTER_IMAGE_1_RIGHT_TX =
     // __ANIMATED_MULTI: total number of frames
     1,
 
-    // palette number (0-3)
-    0,
+	// palette number (0-3)
+	0,
 
 	// recyclable
 	true,
+
+	// vertical flip
+	false,
+
+	// horizontal flip
+	false,
 };
 
 BgmapSpriteROMSpec VUE_MASTER_IMAGE_1_LEFT_SPRITE =
@@ -191,6 +203,9 @@ VueMasterImageROMSpec VUE_MASTER_IMAGE_1_EN =
 			// sprites
 			(SpriteSpec**)VUE_MASTER_IMAGE_1_SPRITES,
 
+			// use z displacement in projection
+			false,
+
 			// collision shapes
 			(ShapeSpec*)NULL,
 
@@ -199,7 +214,7 @@ VueMasterImageROMSpec VUE_MASTER_IMAGE_1_EN =
 			{0, 0, 0},
 
 			// gameworld's character's type
-			kNoType,
+			kTypeNone,
 
 			// physical specification
 			(PhysicalSpecification*)NULL,

@@ -134,6 +134,12 @@ TextureROMSpec HI_COLOR_SWITCH_TX =
 
 	// recyclable
 	false,
+
+	// vertical flip
+	false,
+
+	// horizontal flip
+	false,
 };
 
 BgmapSpriteROMSpec HI_COLOR_SWITCH_SP =
@@ -181,6 +187,9 @@ AnimatedEntityROMSpec HI_COLOR_SWITCH_AE =
 		// sprites
 		(SpriteSpec**)HI_COLOR_SWITCH_SPRITES,
 
+		// use z displacement in projection
+		false,
+
 		// collision shapes
 		(ShapeSpec*)NULL,
 
@@ -189,7 +198,7 @@ AnimatedEntityROMSpec HI_COLOR_SWITCH_AE =
 		{0, 0, 0},
 
 		// gameworld's character's type
-		kNoType,
+		kTypeNone,
 
 		// physical specification
 		(PhysicalSpecification*)NULL,

@@ -121,6 +121,12 @@ TextureROMSpec VUE_MASTER_IMAGE_11_L_TX =
 
 	// recyclable
 	true,
+
+	// vertical flip
+	false,
+
+	// horizontal flip
+	false,
 };
 
 BgmapSpriteROMSpec VUE_MASTER_IMAGE_11_L_SPRITE =
@@ -192,6 +198,12 @@ TextureROMSpec VUE_MASTER_IMAGE_11_R_TX =
 
 	// recyclable
 	true,
+
+	// vertical flip
+	false,
+
+	// horizontal flip
+	false,
 };
 
 BgmapSpriteROMSpec VUE_MASTER_IMAGE_11_R_SPRITE =
@@ -242,7 +254,10 @@ VueMasterImageROMSpec VUE_MASTER_IMAGE_11_EN =
 			// sprites
 			(SpriteSpec**)VUE_MASTER_IMAGE_11_SPRITES,
 
-			// collision shapes
+			// use z displacement in projection
+		false,
+
+		// collision shapes
 			(ShapeSpec*)NULL,
 
 			// size
