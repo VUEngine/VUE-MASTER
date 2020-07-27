@@ -155,7 +155,7 @@ BgmapSpriteROMSpec* const PRESS_START_SPRITES[] =
 	NULL
 };
 
-AnimatedEntityROMSpec PRESS_START_AG =
+AnimatedEntityROMSpec PRESS_START_AE =
 {
 	{
 		// class allocator

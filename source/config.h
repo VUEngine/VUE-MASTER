@@ -115,7 +115,7 @@
 // maker code (2 chars)		 ##
 #define __MAKER_CODE		"CR"
 // game code (4 chars)		 ####
-#define __GAME_CODE			"VVVM"
+#define __GAME_CODE			"VV2E"
 // revision (1.x)			 #
 #define __ROM_VERSION		 0
 
