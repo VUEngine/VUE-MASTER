@@ -129,6 +129,7 @@ void TitleScreenState::enter(void* owner __attribute__ ((unused)))
 	GameState::startClocks(GameState::safeCast(this));
 
 	// start fade in effect
+	Camera::startEffect(Camera::getInstance(), kHide);
 	Camera::startEffect(Camera::getInstance(),
 		kFadeTo, // effect type
 		0, // initial delay (in ms)

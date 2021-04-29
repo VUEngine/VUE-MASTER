@@ -281,7 +281,7 @@ StageROMSpec TITLE_SCREEN_ST =
         },
 
         // children
-        TITLE_SCREEN_ST_CHILDREN,
+        (PositionedEntity*)TITLE_SCREEN_ST_CHILDREN,
     },
 
 	// post processing effects

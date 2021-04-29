@@ -197,7 +197,13 @@ VueMasterImageROMSpec VUE_MASTER_IMAGE_1_EN =
 			// class allocator
 			__TYPE(AnimatedEntity),
 
+			// children
+			NULL,
+
 			// behaviors 
+			NULL,
+
+			// extra
 			NULL,
 
 			// sprites

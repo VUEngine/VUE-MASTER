@@ -276,7 +276,7 @@ StageROMSpec VUE_MASTER_ST =
         },
 
         // children
-        VUE_MASTER_ST_CHILDREN,
+        (PositionedEntity*)VUE_MASTER_ST_CHILDREN,
     },
 
 	// post processing effects

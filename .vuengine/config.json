@@ -15,8 +15,8 @@
 		"brightness": {
 			"brightRed": 128,
 			"darkRed": 32,
-			"fadeDelay": 8,
-			"fadeIncrement": 8,
+			"fadeDelay": 48,
+			"fadeIncrement": 4,
 			"mediumRed": 64
 		},
 		"palettes": {
@@ -75,19 +75,20 @@
 		"scrambleBinary": false
 	},
 	"debug": {
+		"enableProfiler": false,
 		"showStackOverflowAlert": false,
 		"alertVipOvertime": false,
 		"dimmForProfiling": false,
 		"showDetailedMemoryPoolStatus": false,
 		"printFramerate": false,
 		"showMemoryPoolStatus": false,
-		"profileGame": false,
-		"profileGameStateDuringVipInterrupt": false,
 		"profileStreaming": false,
-		"showGameProfiling": false,
 		"showStreamingProfiling": false,
 		"stackHeadroom": 1000,
 		"alertForTornFrames": false,
+		"profileGame": false,
+		"profileGameStateDuringVipInterrupt": false,
+		"showGameProfiling": false,
 		"alertStackOverflow": false,
 		"printDetailedMemoryPoolStatus": false,
 		"printMemoryPoolStatus": false
@@ -105,6 +106,9 @@
 		"timerResolution": 10
 	},
 	"game": [],
+	"communications": {
+		"enable": false
+	},
 	"memoryPools": {
 		"cleanUp": false,
 		"pools": [

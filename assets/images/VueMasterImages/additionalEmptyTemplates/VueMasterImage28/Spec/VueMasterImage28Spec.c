@@ -197,16 +197,22 @@ VueMasterImageROMSpec VUE_MASTER_IMAGE_28_EN =
 			// class allocator
 			__TYPE(AnimatedEntity),
 
+			// children
+			NULL,
+
 			// behaviors 
+			NULL,
+
+			// extra
 			NULL,
 
 			// sprites
 			(SpriteSpec**)VUE_MASTER_IMAGE_28_SPRITES,
 
 			// use z displacement in projection
-		false,
+			false,
 
-		// collision shapes
+			// collision shapes
 			(ShapeSpec*)NULL,
 
 			// size
