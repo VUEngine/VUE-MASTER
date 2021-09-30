@@ -25,12 +25,12 @@
 int main(void)
 {
 	// initialize plugins
-    SplashScreenState::setNextState(
+	SplashScreenState::setNextState(
 		SplashScreenState::safeCast(AdjustmentScreenState::getInstance()),
 		GameState::safeCast(TitleScreenState::getInstance())
 	);
 
-    // start the game
+	// start the game
 	Game_start(Game::getInstance(), GameState::safeCast(AdjustmentScreenState::getInstance()));
 	//Game_start(Game::getInstance(), GameState::safeCast(VueMasterState::getInstance()));
 

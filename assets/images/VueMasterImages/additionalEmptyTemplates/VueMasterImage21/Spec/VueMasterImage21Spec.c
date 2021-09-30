@@ -38,37 +38,37 @@ CharSetROMSpec VUE_MASTER_IMAGE_21_CH =
 	// number of chars, depending on allocation type:
 	// __ANIMATED_SINGLE*, __ANIMATED_SHARED*: number of chars of a single animation frame (cols * rows)
 	// __ANIMATED_MULTI, __NOT_ANIMATED: sum of all chars
-    2033,
+	2033,
 
-    // allocation type
-    // (__ANIMATED_SINGLE, __ANIMATED_SINGLE_OPTIMIZED, __ANIMATED_SHARED, __ANIMATED_SHARED_COORDINATED, __ANIMATED_MULTI or __NOT_ANIMATED)
-    __NOT_ANIMATED,
+	// allocation type
+	// (__ANIMATED_SINGLE, __ANIMATED_SINGLE_OPTIMIZED, __ANIMATED_SHARED, __ANIMATED_SHARED_COORDINATED, __ANIMATED_MULTI or __NOT_ANIMATED)
+	__NOT_ANIMATED,
 
-    // char spec
-    VueMasterImage21Tiles,
+	// char spec
+	VueMasterImage21Tiles,
 };
 
 TextureROMSpec VUE_MASTER_IMAGE_21_LEFT_TX =
 {
-    // charset spec
-    (CharSetSpec*)&VUE_MASTER_IMAGE_21_CH,
+	// charset spec
+	(CharSetSpec*)&VUE_MASTER_IMAGE_21_CH,
 
-    // bgmap spec
-    VueMasterImage21LMap,
+	// bgmap spec
+	VueMasterImage21LMap,
 
-    // cols (max 64)
-    48,
+	// cols (max 64)
+	48,
 
-    // rows (max 64)
-    28,
+	// rows (max 64)
+	28,
 
-    // padding for affine/hbias transformations (cols, rows)
+	// padding for affine/hbias transformations (cols, rows)
 	{0, 0},
 
 	// number of frames, depending on charset's allocation type:
-    // __ANIMATED_SINGLE, _SHARED, _SHARED_COORDINATED, __NOT_ANIMATED: 1
-    // __ANIMATED_MULTI: total number of frames
-    1,
+	// __ANIMATED_SINGLE, _SHARED, _SHARED_COORDINATED, __NOT_ANIMATED: 1
+	// __ANIMATED_MULTI: total number of frames
+	1,
 
 	// palette number (0-3)
 	0,
@@ -85,25 +85,25 @@ TextureROMSpec VUE_MASTER_IMAGE_21_LEFT_TX =
 
 TextureROMSpec VUE_MASTER_IMAGE_21_RIGHT_TX =
 {
-    // charset spec
-    (CharSetSpec*)&VUE_MASTER_IMAGE_21_CH,
+	// charset spec
+	(CharSetSpec*)&VUE_MASTER_IMAGE_21_CH,
 
-    // bgmap spec
-    VueMasterImage21RMap,
+	// bgmap spec
+	VueMasterImage21RMap,
 
-    // cols (max 64)
-    48,
+	// cols (max 64)
+	48,
 
-    // rows (max 64)
-    28,
+	// rows (max 64)
+	28,
 
-    // padding for affine/hbias transformations (cols, rows)
+	// padding for affine/hbias transformations (cols, rows)
 	{0, 0},
 
 	// number of frames, depending on charset's allocation type:
-    // __ANIMATED_SINGLE, _SHARED, _SHARED_COORDINATED, __NOT_ANIMATED: 1
-    // __ANIMATED_MULTI: total number of frames
-    1,
+	// __ANIMATED_SINGLE, _SHARED, _SHARED_COORDINATED, __NOT_ANIMATED: 1
+	// __ANIMATED_MULTI: total number of frames
+	1,
 
 	// palette number (0-3)
 	0,
@@ -120,19 +120,19 @@ TextureROMSpec VUE_MASTER_IMAGE_21_RIGHT_TX =
 
 BgmapSpriteROMSpec VUE_MASTER_IMAGE_21_LEFT_SPRITE =
 {
-    {
-        // sprite's type
-        __TYPE(BgmapSprite),
+	{
+		// sprite's type
+		__TYPE(BgmapSprite),
 
-        // texture spec
-        (TextureSpec*)&VUE_MASTER_IMAGE_21_LEFT_TX,
+		// texture spec
+		(TextureSpec*)&VUE_MASTER_IMAGE_21_LEFT_TX,
 
 		// transparent (__TRANSPARENCY_NONE, __TRANSPARENCY_EVEN or __TRANSPARENCY_ODD)
 		__TRANSPARENCY_NONE,
 
-        // displacement
-        {0, 0, 0, 0},
-    },
+		// displacement
+		{0, 0, 0, 0},
+	},
 
 	// bgmap mode (__WORLD_BGMAP, __WORLD_AFFINE, __WORLD_OBJ or __WORLD_HBIAS)
 	__WORLD_BGMAP,
@@ -146,19 +146,19 @@ BgmapSpriteROMSpec VUE_MASTER_IMAGE_21_LEFT_SPRITE =
 
 BgmapSpriteROMSpec VUE_MASTER_IMAGE_21_RIGHT_SPRITE =
 {
-    {
-        // sprite's type
-        __TYPE(BgmapSprite),
+	{
+		// sprite's type
+		__TYPE(BgmapSprite),
 
-        // texture spec
-        (TextureSpec*)&VUE_MASTER_IMAGE_21_RIGHT_TX,
+		// texture spec
+		(TextureSpec*)&VUE_MASTER_IMAGE_21_RIGHT_TX,
 
 		// transparent (__TRANSPARENCY_NONE, __TRANSPARENCY_EVEN or __TRANSPARENCY_ODD)
 		__TRANSPARENCY_NONE,
 
-        // displacement
-        {0, 0, 0, 0},
-    },
+		// displacement
+		{0, 0, 0, 0},
+	},
 
 	// bgmap mode (__WORLD_BGMAP, __WORLD_AFFINE, __WORLD_OBJ or __WORLD_HBIAS)
 	__WORLD_BGMAP,
