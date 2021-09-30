@@ -1,5 +1,4 @@
-VUE-MASTER
-==========
+# VUE-MASTER
 
 VUE-MASTER (read: "View Master") is a take on the classic toy stereo image viewer. It's a Virtual Boy stereo viewer by Stereo Boy and KR155E, containing 7 stereo images. First and foremost, though, it is meant as a VUEngine template which allows anyone to compile their own stereo images into a ROM to view on real Virtual Boy hardware, without any programming knowledge.
 
@@ -7,7 +6,7 @@ VUE-MASTER (read: "View Master") is a take on the classic toy stereo image viewe
 LICENSE
 -------
 
-Copyright (C) 2007, 2018 by Jorge Eremiev <jorgech3@gmail.com> and Christian Radke <chris@vr32.de>
+Copyright (C) STEREO BOY and KR155E
 
 This software is licensed under the MIT License, which means you can basically do with it whatever you 
 want as long as you include the original copyright and license notice in any copy of the software/source. 
@@ -26,25 +25,3 @@ want as long as you include the original copyright and license notice in any cop
 	NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
 	WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
 	SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-
-
-COMPILING
----------
-
-VUE-MASTER as well as the VUEngine come bundled with VBDE (http://vbde.planetvb.com). 
-Compile by starting the VBDE build system.
-
-
-CREDITS
--------
-	
-  - Marten Reiß (STEREO BOY)
-    - Concept & design
-    - Stereo images
-		
-  - Christian Radke (KR155E)
-    - Programmer
-
-
-V810 is a trade mark of NEC. Virtual Boy is a trade mark of Nintendo. 
-Jorge Eremiev and Christian Radke are in no way affiliated with either of these parties.

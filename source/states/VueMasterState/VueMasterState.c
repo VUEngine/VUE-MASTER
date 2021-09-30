@@ -1,22 +1,10 @@
-/* VUEngine - Virtual Utopia Engine <http://vuengine.planetvb.com/>
- * A universal game engine for the Nintendo Virtual Boy
+/**
+ * VUE-MASTER
  *
- * Copyright (C) 2007, 2018 by Jorge Eremiev <jorgech3@gmail.com> and Christian Radke <chris@vr32.de>
+ * (c) STEREO BOY and KR155E
  *
- * Permission is hereby granted, free of charge, to any person obtaining a copy of this software and
- * associated documentation files (the "Software"), to deal in the Software without restriction, including
- * without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- * copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to
- * the following conditions:
- *
- * The above copyright notice and this permission notice shall be included in all copies or substantial
- * portions of the Software.
- *
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT
- * LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN
- * NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
- * WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
- * SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ * For the full copyright and license information, please view the LICENSE file
+ * that was distributed with this source code.
  */
 
 
@@ -90,7 +78,7 @@ void VueMasterState::enter(void* owner __attribute__ ((unused)))
     Game::disableKeypad(Game::getInstance());
 
 	// load stage
-	GameState::loadStage(GameState::safeCast(this), (StageSpec*)&VUE_MASTER_ST, NULL, true);
+	GameState::loadStage(GameState::safeCast(this), (StageSpec*)&VUE_MASTER_ST, NULL, true, false);
 
 	// init members
 	this->currentImage = 0;
@@ -144,8 +132,8 @@ void VueMasterState::printImageNumber()
 	if (this->showNumber)
 	{
 		Printing::text(Printing::getInstance(), "./.", __NUMBER_INDICATOR_X_POS + 2, __NUMBER_INDICATOR_Y_POS, "Number");
-		Printing::int(Printing::getInstance(), this->currentImage + 1, __NUMBER_INDICATOR_X_POS + 2, __NUMBER_INDICATOR_Y_POS, "Number");
-		Printing::int(Printing::getInstance(), __NUMBER_OF_VIEWER_IMAGES, __NUMBER_INDICATOR_X_POS + 4, __NUMBER_INDICATOR_Y_POS, "Number");
+		Printing::int32(Printing::getInstance(), this->currentImage + 1, __NUMBER_INDICATOR_X_POS + 2, __NUMBER_INDICATOR_Y_POS, "Number");
+		Printing::int32(Printing::getInstance(), __NUMBER_OF_VIEWER_IMAGES, __NUMBER_INDICATOR_X_POS + 4, __NUMBER_INDICATOR_Y_POS, "Number");
 	}
 	else
 	{
@@ -155,8 +143,8 @@ void VueMasterState::printImageNumber()
 	if (this->showNumber)
 	{
 		Printing::text(Printing::getInstance(), "00/..", __NUMBER_INDICATOR_X_POS, __NUMBER_INDICATOR_Y_POS, "Number");
-		Printing::int(Printing::getInstance(), this->currentImage + 1, (this->currentImage>8 ? __NUMBER_INDICATOR_X_POS : __NUMBER_INDICATOR_X_POS + 1), __NUMBER_INDICATOR_Y_POS, "Number");
-		Printing::int(Printing::getInstance(), __NUMBER_OF_VIEWER_IMAGES, __NUMBER_INDICATOR_X_POS + 3, __NUMBER_INDICATOR_Y_POS, "Number");
+		Printing::int32(Printing::getInstance(), this->currentImage + 1, (this->currentImage>8 ? __NUMBER_INDICATOR_X_POS : __NUMBER_INDICATOR_X_POS + 1), __NUMBER_INDICATOR_Y_POS, "Number");
+		Printing::int32(Printing::getInstance(), __NUMBER_OF_VIEWER_IMAGES, __NUMBER_INDICATOR_X_POS + 3, __NUMBER_INDICATOR_Y_POS, "Number");
 	}
 	else
 	{

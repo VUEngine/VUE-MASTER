@@ -3,8 +3,8 @@
 ###########################################################################################################
 
 # VUEngine based plugins that the project uses
-PLUGINS 						= vuengine/other/I18n \
-								  vuengine/states/SplashScreens
+PLUGINS 						= vuengine//other/I18n \
+								  vuengine//states/splash/AdjustmentScreenVUEngine
 
 # Compiler's output
 COMPILER_OUTPUT					= c
