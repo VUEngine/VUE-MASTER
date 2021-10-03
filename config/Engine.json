@@ -67,6 +67,9 @@
 			"printingPalette": 0
 		}
 	},
+	"communications": {
+		"enable": false
+	},
 	"debug": {
 		"enableProfiler": false,
 		"showStackOverflowAlert": false,
@@ -99,9 +102,6 @@
 		"timerResolution": 10
 	},
 	"game": [],
-	"communications": {
-		"enable": false
-	},
 	"memoryPools": {
 		"cleanUp": false,
 		"pools": [
@@ -183,8 +183,7 @@
 		"leftEarCenter": 96,
 		"rightEarCenter": 288,
 		"stereoHorizontalAttenuationFactor": 50,
-		"stereoVerticalAttenuationFactor": 50,
-		"stereoAttenuationFactor": 75
+		"stereoVerticalAttenuationFactor": 50
 	},
 	"sprite": {
 		"totalLayers": 32,

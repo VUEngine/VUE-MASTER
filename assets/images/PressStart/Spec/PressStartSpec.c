@@ -1,7 +1,7 @@
 /**
  * VUE-MASTER
  *
- * (c) STEREO BOY and KR155E
+ * © STEREO BOY and KR155E
  *
  * For the full copyright and license information, please view the LICENSE file
  * that was distributed with this source code.
@@ -98,7 +98,7 @@ TextureROMSpec PRESS_START_TX =
 	1,
 
 	// palette number (0-3)
-	3,
+	1,
 
 	// recyclable
 	false,

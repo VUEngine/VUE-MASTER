@@ -6,7 +6,7 @@ VUE-MASTER (read: "View Master") is a take on the classic toy stereo image viewe
 LICENSE
 -------
 
-Copyright (C) STEREO BOY and KR155E
+© STEREO BOY and KR155E
 
 This software is licensed under the MIT License, which means you can basically do with it whatever you 
 want as long as you include the original copyright and license notice in any copy of the software/source. 

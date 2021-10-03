@@ -1,7 +1,7 @@
 /**
  * VUE-MASTER
  *
- * (c) STEREO BOY and KR155E
+ * © STEREO BOY and KR155E
  *
  * For the full copyright and license information, please view the LICENSE file
  * that was distributed with this source code.
@@ -205,13 +205,13 @@ void VueMasterState::switchImage()
 	Entity::addSprites(Entity::safeCast(this->imageEntity), animatedEntitySpec->entitySpec.spriteSpecs);
 
 	this->currentIsVideo = (animatedEntitySpec->animationDescription != NULL);
-
+/*
 	// replace animation spec and play animation
 	AnimatedEntity::setAnimationDescription(this->imageEntity, animatedEntitySpec->animationDescription);
 	AnimatedEntity::playAnimation(this->imageEntity, animatedEntitySpec->initialAnimation);
 	this->animationPlaying = true;
 	VueMasterState::printVideoControls(this);
-
+*/
 	// set color config
 	ColorConfig colorConfig = vueMasterImageSpec->colorConfig;
 	VueMasterState::setColorConfig(this, colorConfig);
