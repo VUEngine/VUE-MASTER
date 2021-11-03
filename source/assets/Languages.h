@@ -5,24 +5,21 @@
 #ifndef LANGUAGES_H_
 #define LANGUAGES_H_
 
-
 //---------------------------------------------------------------------------------------------------------
-//												DEFINITIONS
+//                                               DEFINITIONS
 //---------------------------------------------------------------------------------------------------------
 
 enum LanguageIdentifiers
 {
-	LNG_EN,
-	
+	kLanguageEnglish,
 };
 
 enum LanguageStrings
 {
-	STR_MENU_CREDITS,
-	STR_MENU_VIEW,
-	STR_REEL_CREDITS,
-	STR_REEL_TITLE,
-	
+	kStringMenuCredits,
+	kStringMenuView,
+	kStringReelCredits,
+	kStringReelTitle,
 };
 
 

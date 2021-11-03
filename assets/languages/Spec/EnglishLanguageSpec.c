@@ -7,18 +7,33 @@
 //                                                INCLUDES
 //---------------------------------------------------------------------------------------------------------
 
-#include <Fonts.h>
+#include <I18n.h>
 
 
 //---------------------------------------------------------------------------------------------------------
 //                                               DEFINITIONS
 //---------------------------------------------------------------------------------------------------------
 
-FontSpec* const __FONTS[] =
+const char* const EnglishLanguageStrings[] =
 {
-	(FontSpec*)&DefaultFont,
-	(FontSpec*)&ProfilerFont,
-	(FontSpec*)&NumberFont,
+	/* kStringMenuCredits: */
+	"Credits",
+	/* kStringMenuView: */
+	"View Stereo Reel",
+	/* kStringReelCredits: */
+	"Photos & CGI by STEREO BOY.\n VB Controller & Stand 3D\n  models by Hedgetrimmer.",
+	/* kStringReelTitle: */
+	"The VUE-MASTER Demo Reel\n   2018 by STEREO BOY",
+};
+
+const LangROMSpec EnglishLanguage =
+{
+	// language name
+	"English",
+
+	// flag entity
+	NULL,
 	
-	NULL
+	// strings
+	(const char**)EnglishLanguageStrings
 };

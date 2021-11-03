@@ -4,42 +4,52 @@
 
 
 //---------------------------------------------------------------------------------------------------------
-// IMPORTANT: Ensure that this file is encoded in Windows-1252 to make use of the full
-//            character set including special characters of European languages.
+//                                                INCLUDES
 //---------------------------------------------------------------------------------------------------------
 
-//---------------------------------------------------------------------------------------------------------
-//												INCLUDES
-//---------------------------------------------------------------------------------------------------------
-
-#include <I18n.h>
+#include <Printing.h>
 
 
 //---------------------------------------------------------------------------------------------------------
-//												DEFINITIONS
+//                                              DECLARATIONS
 //---------------------------------------------------------------------------------------------------------
 
-const char* const LANGUAGE_EN_STRINGS[] =
+extern BYTE GuiFontTiles[];
+
+
+//---------------------------------------------------------------------------------------------------------
+//                                               DEFINITIONS
+//---------------------------------------------------------------------------------------------------------
+
+CharSetROMSpec NumberFontCharSet =
 {
-	/* STR_MENU_CREDITS: */
-	"Credits",
-	/* STR_MENU_VIEW: */
-	"View Stereo Reel",
-	/* STR_REEL_CREDITS: */
-	"Photos & CGI by STEREO BOY.\n VB Controller & Stand 3D\n  models by Hedgetrimmer.",
-	/* STR_REEL_TITLE: */
-	"The VUE-MASTER Demo Reel\n   2018 by STEREO BOY",
-	
+	// number of chars
+	15,
+
+	// allocation type
+	__NOT_ANIMATED,
+
+	// char spec
+	GuiFontTiles,
 };
 
-const LangROMSpec LANGUAGE_EN =
+FontROMSpec NumberFont =
 {
-	// language name
-	"English",
+	// font charset spec pointer
+	(CharSetSpec*)&NumberFontCharSet,
 
-	// flag entity
-	NULL,
-	
-	// strings
-	(const char**)LANGUAGE_EN_STRINGS
+	// character number at which the font starts, allows you to skip the control characters for example
+	46,
+
+	// number of characters in this font
+	15,
+
+	// number of characters per line in charset
+	15,
+
+	// size of a single character (in chars) ({width, height})
+	{1, 1},
+
+	// font's name
+	"Number",
 };

@@ -79,8 +79,8 @@ void TitleScreenState::enter(void* owner __attribute__ ((unused)))
 	));
 
 	// print reel title and credits
-	const char* strReelTitle = I18n::getText(I18n::getInstance(), STR_REEL_TITLE);
-	const char* strReelCredits = I18n::getText(I18n::getInstance(), STR_REEL_CREDITS);
+	const char* strReelTitle = I18n::getText(I18n::getInstance(), kStringReelTitle);
+	const char* strReelCredits = I18n::getText(I18n::getInstance(), kStringReelCredits);
 	FontSize strReelTitleSize = Printing::getTextSize(Printing::getInstance(), strReelTitle, NULL);
 	FontSize strReelCreditsSize = Printing::getTextSize(Printing::getInstance(), strReelCredits, NULL);
 	Printing::setPalette(Printing::getInstance(), 0);

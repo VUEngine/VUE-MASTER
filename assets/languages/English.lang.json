@@ -1,0 +1,12 @@
+{
+	"id": "English",
+	"flag": "",
+	"name": "English",
+	"order": 1,
+	"strings": {
+		"MenuCredits": "Credits",
+		"MenuView": "View Stereo Reel",
+		"ReelCredits": "Photos & CGI by STEREO BOY.\n VB Controller & Stand 3D\n  models by Hedgetrimmer.",
+		"ReelTitle": "The VUE-MASTER Demo Reel\n   2018 by STEREO BOY"
+	}
+}

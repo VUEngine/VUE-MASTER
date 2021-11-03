@@ -20,7 +20,7 @@
 // 												DECLARATIONS
 //---------------------------------------------------------------------------------------------------------
 
-extern FontROMSpec NUMBER_FONT;
+extern FontROMSpec NumberFont;
 extern EntitySpec VUE_MASTER_IMAGE_1_EN;
 
 
@@ -42,7 +42,7 @@ PositionedEntityROMSpec VUE_MASTER_ST_CHILDREN[] =
 
 FontROMSpec* const VUE_MASTER_ST_FONTS[] =
 {
-	&NUMBER_FONT,
+	&NumberFont,
 
 	NULL
 };

@@ -20,7 +20,7 @@
 // 												DECLARATIONS
 //---------------------------------------------------------------------------------------------------------
 
-extern FontSpec DEFAULT_FONT;
+extern FontSpec DefaultFont;
 extern EntitySpec CREDITS_EN;
 extern EntitySpec HI_COLOR_SWITCH_AE;
 extern EntitySpec LOGO_AE;
@@ -48,7 +48,7 @@ PositionedEntityROMSpec TITLE_SCREEN_ST_CHILDREN[] =
 
 FontROMSpec* const TITLE_SCREEN_ST_FONTS[] =
 {
-	&DEFAULT_FONT,
+	&DefaultFont,
 
 	NULL
 };
