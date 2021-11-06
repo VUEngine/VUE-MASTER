@@ -44,7 +44,7 @@
 // 												DECLARATIONS
 //---------------------------------------------------------------------------------------------------------
 
-extern StageROMSpec VUE_MASTER_ST;
+extern StageROMSpec VueMasterSt;
 
 
 //---------------------------------------------------------------------------------------------------------
@@ -78,7 +78,7 @@ void VueMasterState::enter(void* owner __attribute__ ((unused)))
 	Game::disableKeypad(Game::getInstance());
 
 	// load stage
-	GameState::loadStage(GameState::safeCast(this), (StageSpec*)&VUE_MASTER_ST, NULL, true, false);
+	GameState::loadStage(GameState::safeCast(this), (StageSpec*)&VueMasterSt, NULL, true, false);
 
 	// init members
 	this->currentImage = 0;

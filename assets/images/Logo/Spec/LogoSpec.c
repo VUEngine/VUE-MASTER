@@ -30,7 +30,7 @@ extern BYTE LogoRMap[];
 //												DEFINITIONS
 //---------------------------------------------------------------------------------------------------------
 
-AnimationFunctionROMSpec LOGO_HI_COLOR_ANIM =
+AnimationFunctionROMSpec LogoHiColorAnimation =
 {
 	// number of frames of this animation function
 	2,
@@ -51,7 +51,7 @@ AnimationFunctionROMSpec LOGO_HI_COLOR_ANIM =
 	"HiColor",
 };
 
-AnimationFunctionROMSpec LOGO_4_COLOR_ANIM =
+AnimationFunctionROMSpec Logo4ColorAnimation =
 {
 	// number of frames of this animation function
 	1,
@@ -73,19 +73,19 @@ AnimationFunctionROMSpec LOGO_4_COLOR_ANIM =
 };
 
 // an animation spec
-AnimationDescriptionROMSpec LOGO_ANIM =
+AnimationDescriptionROMSpec LogoAnimation =
 {
 	// animation functions
 	{
-		(AnimationFunction*)&LOGO_HI_COLOR_ANIM,
-		(AnimationFunction*)&LOGO_4_COLOR_ANIM,
+		(AnimationFunction*)&LogoHiColorAnimation,
+		(AnimationFunction*)&Logo4ColorAnimation,
 		NULL,
 	}
 };
 
 /* LEFT */
 
-CharSetROMSpec LOGO_L_CH =
+CharSetROMSpec LogoLCharset =
 {
 	// number of chars, depending on allocation type:
 	// __ANIMATED_SINGLE*, __ANIMATED_SHARED*: number of chars of a single animation frame (cols * rows)
@@ -100,10 +100,10 @@ CharSetROMSpec LOGO_L_CH =
 	LogoLTiles,
 };
 
-TextureROMSpec LOGO_L_TX =
+TextureROMSpec LogoLTexture =
 {
 	// charset spec
-	(CharSetSpec*)&LOGO_L_CH,
+	(CharSetSpec*)&LogoLCharset,
 
 	// bgmap spec
 	LogoLMap,
@@ -135,14 +135,14 @@ TextureROMSpec LOGO_L_TX =
 	false,
 };
 
-BgmapSpriteROMSpec LOGO_L_SP =
+BgmapSpriteROMSpec LogoLSprite =
 {
 	{
 		// sprite's type
 		__TYPE(BgmapAnimatedSprite),
 
 		// texture spec
-		(TextureSpec*)&LOGO_L_TX,
+		(TextureSpec*)&LogoLTexture,
 
 		// transparent (__TRANSPARENCY_NONE, __TRANSPARENCY_EVEN or __TRANSPARENCY_ODD)
 		__TRANSPARENCY_NONE,
@@ -164,7 +164,7 @@ BgmapSpriteROMSpec LOGO_L_SP =
 
 /* RIGHT */
 
-CharSetROMSpec LOGO_R_CH =
+CharSetROMSpec LogoRCharset =
 {
 	// number of chars, depending on allocation type:
 	// __ANIMATED_SINGLE*, __ANIMATED_SHARED*: number of chars of a single animation frame (cols * rows)
@@ -179,10 +179,10 @@ CharSetROMSpec LOGO_R_CH =
 	LogoRTiles,
 };
 
-TextureROMSpec LOGO_R_TX =
+TextureROMSpec LogoRTexture =
 {
 	// charset spec
-	(CharSetSpec*)&LOGO_R_CH,
+	(CharSetSpec*)&LogoRCharset,
 
 	// bgmap spec
 	LogoRMap,
@@ -214,14 +214,14 @@ TextureROMSpec LOGO_R_TX =
 	false,
 };
 
-BgmapSpriteROMSpec LOGO_R_SP =
+BgmapSpriteROMSpec LogoRSprite =
 {
 	{
 		// sprite's type
 		__TYPE(BgmapAnimatedSprite),
 
 		// texture spec
-		(TextureSpec*)&LOGO_R_TX,
+		(TextureSpec*)&LogoRTexture,
 
 		// transparent (__TRANSPARENCY_NONE, __TRANSPARENCY_EVEN or __TRANSPARENCY_ODD)
 		__TRANSPARENCY_NONE,
@@ -243,14 +243,14 @@ BgmapSpriteROMSpec LOGO_R_SP =
 
 /* ENTITY */
 
-BgmapSpriteROMSpec* const LOGO_SPRITES[] =
+BgmapSpriteROMSpec* const LogoSprites[] =
 {
-	&LOGO_L_SP,
-	&LOGO_R_SP,
+	&LogoLSprite,
+	&LogoRSprite,
 	NULL
 };
 
-AnimatedEntityROMSpec LOGO_AE =
+AnimatedEntityROMSpec LogoAe =
 {
 	{
 		// class allocator
@@ -266,7 +266,7 @@ AnimatedEntityROMSpec LOGO_AE =
 		NULL,
 
 		// sprites
-		(SpriteSpec**)LOGO_SPRITES,
+		(SpriteSpec**)LogoSprites,
 
 		// use z displacement in projection
 		false,
@@ -286,7 +286,7 @@ AnimatedEntityROMSpec LOGO_AE =
 	},
 
 	// pointer to the animation spec for the item
-	(AnimationDescription*)&LOGO_ANIM,
+	(AnimationDescription*)&LogoAnimation,
 
 	// initial animation
 	"HiColor",

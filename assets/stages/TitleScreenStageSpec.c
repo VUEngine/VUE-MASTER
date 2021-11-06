@@ -20,17 +20,23 @@
 // 												DECLARATIONS
 //---------------------------------------------------------------------------------------------------------
 
-extern FontROMSpec NumberFont;
-extern EntitySpec VUE_MASTER_IMAGE_1_EN;
+extern FontSpec DefaultFont;
+extern EntitySpec CreditsEntity;
+extern EntitySpec HiColorSwitchAe;
+extern EntitySpec LogoAe;
+extern EntitySpec PressStartAe;
 
 
 //---------------------------------------------------------------------------------------------------------
 // 												ASSETS
 //---------------------------------------------------------------------------------------------------------
 
-PositionedEntityROMSpec VUE_MASTER_ST_CHILDREN[] =
+PositionedEntityROMSpec TitleScreenStChildren[] =
 {
-	{&VUE_MASTER_IMAGE_1_EN,	{192, 112, 0, 0}, 0, "ImageEntity", NULL, NULL, true},
+	{&LogoAe, 				{186,  52, 0, 0}, 0, "Logo", NULL, NULL, false},
+	{&PressStartAe, 		{192, 164, 0, 0}, 0, "PrssStrt", NULL, NULL, false},
+	{&HiColorSwitchAe, 		{360, 196, 0, 0}, 0, "HiColor", NULL, NULL, false},
+	{&CreditsEntity, 		{176, 212, 0, 0}, 0, NULL, NULL, NULL, false},
 
 	{NULL,{0,0,0,0}, 0, NULL, NULL, NULL, false},
 };
@@ -40,9 +46,9 @@ PositionedEntityROMSpec VUE_MASTER_ST_CHILDREN[] =
 // 											PRELOAD LISTS
 //---------------------------------------------------------------------------------------------------------
 
-FontROMSpec* const VUE_MASTER_ST_FONTS[] =
+FontROMSpec* const TitleScreenStFonts[] =
 {
-	&NumberFont,
+	&DefaultFont,
 
 	NULL
 };
@@ -52,7 +58,7 @@ FontROMSpec* const VUE_MASTER_ST_FONTS[] =
 // 											STAGE DEFINITION
 //---------------------------------------------------------------------------------------------------------
 
-StageROMSpec VUE_MASTER_ST =
+StageROMSpec TitleScreenSt =
 {
 	// allocator
 	__TYPE(Stage),
@@ -136,7 +142,7 @@ StageROMSpec VUE_MASTER_ST =
 		// colors config
 		{
 			// background color
-			__COLOR_BLACK,
+			__COLOR_DARK_RED,
 
 			// brightness
 			// these values times the repeat values specified in the column table (max. 16) make the final
@@ -242,7 +248,7 @@ StageROMSpec VUE_MASTER_ST =
 	// assets
 	{
 		// fonts to preload
-		(FontSpec**)VUE_MASTER_ST_FONTS,
+		(FontSpec**)TitleScreenStFonts,
 
 		// char sets to preload
 		(CharSetSpec**)NULL,
@@ -263,7 +269,7 @@ StageROMSpec VUE_MASTER_ST =
 		},
 
 		// children
-		(PositionedEntity*)VUE_MASTER_ST_CHILDREN,
+		(PositionedEntity*)TitleScreenStChildren,
 	},
 
 	// post processing effects

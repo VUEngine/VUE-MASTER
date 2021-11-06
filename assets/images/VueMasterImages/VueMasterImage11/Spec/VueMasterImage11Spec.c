@@ -33,7 +33,7 @@ extern BYTE VueMasterImage11RMap[];
 //												DEFINITIONS
 //---------------------------------------------------------------------------------------------------------
 
-AnimationFunctionROMSpec VUE_MASTER_IMAGE_11_DEFAULT_ANIM =
+AnimationFunctionROMSpec VueMasterImage11DefaultAnimation =
 {
 	// number of frames of this animation function
 	8,
@@ -57,17 +57,17 @@ AnimationFunctionROMSpec VUE_MASTER_IMAGE_11_DEFAULT_ANIM =
 };
 
 // an animation spec
-AnimationDescriptionROMSpec VUE_MASTER_IMAGE_11_ANIM =
+AnimationDescriptionROMSpec VueMasterImage11Animation =
 {
 	// animation functions
 	{
-		(AnimationFunction*)&VUE_MASTER_IMAGE_11_DEFAULT_ANIM,
+		(AnimationFunction*)&VueMasterImage11DefaultAnimation,
 
 		NULL,
 	}
 };
 
-CharSetROMSpec VUE_MASTER_IMAGE_11_L_CH =
+CharSetROMSpec VueMasterImage11LCharset =
 {
 	// number of chars, depending on allocation type:
 	// __ANIMATED_SINGLE*, __ANIMATED_SHARED*: number of chars of a single animation frame (cols * rows)
@@ -82,10 +82,10 @@ CharSetROMSpec VUE_MASTER_IMAGE_11_L_CH =
 	VueMasterImage11LTiles,
 };
 
-TextureROMSpec VUE_MASTER_IMAGE_11_L_TX =
+TextureROMSpec VueMasterImage11LTexture =
 {
 	// charset spec
-	(CharSetSpec*)&VUE_MASTER_IMAGE_11_L_CH,
+	(CharSetSpec*)&VueMasterImage11LCharset,
 
 	// bgmap spec
 	VueMasterImage11LMap,
@@ -117,14 +117,14 @@ TextureROMSpec VUE_MASTER_IMAGE_11_L_TX =
 	false,
 };
 
-BgmapSpriteROMSpec VUE_MASTER_IMAGE_11_L_SPRITE =
+BgmapSpriteROMSpec VueMasterImage11LSprite =
 {
 	{
 		// sprite's type
 		__TYPE(BgmapAnimatedSprite),
 
 		// texture spec
-		(TextureSpec*)&VUE_MASTER_IMAGE_11_L_TX,
+		(TextureSpec*)&VueMasterImage11LTexture,
 
 		// transparent (__TRANSPARENCY_NONE, __TRANSPARENCY_EVEN or __TRANSPARENCY_ODD)
 		__TRANSPARENCY_NONE,
@@ -144,7 +144,7 @@ BgmapSpriteROMSpec VUE_MASTER_IMAGE_11_L_SPRITE =
 	__WORLD_LON,
 };
 
-CharSetROMSpec VUE_MASTER_IMAGE_11_R_CH =
+CharSetROMSpec VueMasterImage11RCharset =
 {
 	// number of chars, depending on allocation type:
 	// __ANIMATED_SINGLE*, __ANIMATED_SHARED*: number of chars of a single animation frame (cols * rows)
@@ -159,10 +159,10 @@ CharSetROMSpec VUE_MASTER_IMAGE_11_R_CH =
 	VueMasterImage11RTiles,
 };
 
-TextureROMSpec VUE_MASTER_IMAGE_11_R_TX =
+TextureROMSpec VueMasterImage11RTexture =
 {
 	// charset spec
-	(CharSetSpec*)&VUE_MASTER_IMAGE_11_R_CH,
+	(CharSetSpec*)&VueMasterImage11RCharset,
 
 	// bgmap spec
 	VueMasterImage11RMap,
@@ -194,14 +194,14 @@ TextureROMSpec VUE_MASTER_IMAGE_11_R_TX =
 	false,
 };
 
-BgmapSpriteROMSpec VUE_MASTER_IMAGE_11_R_SPRITE =
+BgmapSpriteROMSpec VueMasterImage11RSprite =
 {
 	{
 		// sprite's type
 		__TYPE(BgmapAnimatedSprite),
 
 		// texture spec
-		(TextureSpec*)&VUE_MASTER_IMAGE_11_R_TX,
+		(TextureSpec*)&VueMasterImage11RTexture,
 
 		// transparent (__TRANSPARENCY_NONE, __TRANSPARENCY_EVEN or __TRANSPARENCY_ODD)
 		__TRANSPARENCY_NONE,
@@ -221,14 +221,14 @@ BgmapSpriteROMSpec VUE_MASTER_IMAGE_11_R_SPRITE =
 	__WORLD_RON,
 };
 
-BgmapSpriteROMSpec* const VUE_MASTER_IMAGE_11_SPRITES[] =
+BgmapSpriteROMSpec* const VueMasterImage11Sprites[] =
 {
-	&VUE_MASTER_IMAGE_11_L_SPRITE,
-	&VUE_MASTER_IMAGE_11_R_SPRITE,
+	&VueMasterImage11LSprite,
+	&VueMasterImage11RSprite,
 	NULL
 };
 
-VueMasterImageROMSpec VUE_MASTER_IMAGE_11_EN =
+VueMasterImageROMSpec VueMasterImage11Entity =
 {
 	// animated entity spec
 	{
@@ -246,7 +246,7 @@ VueMasterImageROMSpec VUE_MASTER_IMAGE_11_EN =
 			NULL,
 
 			// sprites
-			(SpriteSpec**)VUE_MASTER_IMAGE_11_SPRITES,
+			(SpriteSpec**)VueMasterImage11Sprites,
 
 			// use z displacement in projection
 			false,
@@ -266,7 +266,7 @@ VueMasterImageROMSpec VUE_MASTER_IMAGE_11_EN =
 		},
 
 		// pointer to the animation spec for the item
-		(AnimationDescription*)&VUE_MASTER_IMAGE_11_ANIM,
+		(AnimationDescription*)&VueMasterImage11Animation,
 
 		// initial animation
 		"Default"

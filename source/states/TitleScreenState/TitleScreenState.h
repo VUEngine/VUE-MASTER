@@ -7,8 +7,8 @@
  * that was distributed with this source code.
  */
 
-#ifndef TITLE_SCREEN_STATE_H_
-#define TITLE_SCREEN_STATE_H_
+#ifndef TitleScreenStATE_H_
+#define TitleScreenStATE_H_
 
 
 //---------------------------------------------------------------------------------------------------------

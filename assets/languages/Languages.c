@@ -21,7 +21,7 @@ extern LangROMSpec EnglishLanguage;
 //                                               DEFINITIONS                                               
 //---------------------------------------------------------------------------------------------------------
 
-LangROMSpec* const __LANGUAGES[] =
+LangROMSpec* const _languages[] =
 {
 	&EnglishLanguage,
 	

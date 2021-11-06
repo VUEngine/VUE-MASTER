@@ -33,7 +33,7 @@ extern BYTE VueMasterImage46RMap[];
 // 												DEFINITIONS
 //---------------------------------------------------------------------------------------------------------
 
-CharSetROMSpec VUE_MASTER_IMAGE_46_CH =
+CharSetROMSpec VueMasterImage46Charset =
 {
 	// number of chars, depending on allocation type:
 	// __ANIMATED_SINGLE*, __ANIMATED_SHARED*: number of chars of a single animation frame (cols * rows)
@@ -48,10 +48,10 @@ CharSetROMSpec VUE_MASTER_IMAGE_46_CH =
 	VueMasterImage46Tiles,
 };
 
-TextureROMSpec VUE_MASTER_IMAGE_46_LEFT_TX =
+TextureROMSpec VueMasterImage46LeftTexture =
 {
 	// charset spec
-	(CharSetSpec*)&VUE_MASTER_IMAGE_46_CH,
+	(CharSetSpec*)&VueMasterImage46Charset,
 
 	// bgmap spec
 	VueMasterImage46LMap,
@@ -83,10 +83,10 @@ TextureROMSpec VUE_MASTER_IMAGE_46_LEFT_TX =
 	false,
 };
 
-TextureROMSpec VUE_MASTER_IMAGE_46_RIGHT_TX =
+TextureROMSpec VueMasterImage46RightTexture =
 {
 	// charset spec
-	(CharSetSpec*)&VUE_MASTER_IMAGE_46_CH,
+	(CharSetSpec*)&VueMasterImage46Charset,
 
 	// bgmap spec
 	VueMasterImage46RMap,
@@ -118,14 +118,14 @@ TextureROMSpec VUE_MASTER_IMAGE_46_RIGHT_TX =
 	false,
 };
 
-BgmapSpriteROMSpec VUE_MASTER_IMAGE_46_LEFT_SPRITE =
+BgmapSpriteROMSpec VueMasterImage46LeftSprite =
 {
 	{
 		// sprite's type
 		__TYPE(BgmapSprite),
 
 		// texture spec
-		(TextureSpec*)&VUE_MASTER_IMAGE_46_LEFT_TX,
+		(TextureSpec*)&VueMasterImage46LeftTexture,
 
 		// transparent (__TRANSPARENCY_NONE, __TRANSPARENCY_EVEN or __TRANSPARENCY_ODD)
 		__TRANSPARENCY_NONE,
@@ -144,14 +144,14 @@ BgmapSpriteROMSpec VUE_MASTER_IMAGE_46_LEFT_SPRITE =
 	__WORLD_LON,
 };
 
-BgmapSpriteROMSpec VUE_MASTER_IMAGE_46_RIGHT_SPRITE =
+BgmapSpriteROMSpec VueMasterImage46RightSprite =
 {
 	{
 		// sprite's type
 		__TYPE(BgmapSprite),
 
 		// texture spec
-		(TextureSpec*)&VUE_MASTER_IMAGE_46_RIGHT_TX,
+		(TextureSpec*)&VueMasterImage46RightTexture,
 
 		// transparent (__TRANSPARENCY_NONE, __TRANSPARENCY_EVEN or __TRANSPARENCY_ODD)
 		__TRANSPARENCY_NONE,
@@ -170,14 +170,14 @@ BgmapSpriteROMSpec VUE_MASTER_IMAGE_46_RIGHT_SPRITE =
 	__WORLD_RON,
 };
 
-BgmapSpriteROMSpec* const VUE_MASTER_IMAGE_46_SPRITES[] =
+BgmapSpriteROMSpec* const VueMasterImage46Sprites[] =
 {
-	&VUE_MASTER_IMAGE_46_LEFT_SPRITE,
-	&VUE_MASTER_IMAGE_46_RIGHT_SPRITE,
+	&VueMasterImage46LeftSprite,
+	&VueMasterImage46RightSprite,
 	NULL
 };
 
-VueMasterImageROMSpec VUE_MASTER_IMAGE_46_EN =
+VueMasterImageROMSpec VueMasterImage46Entity =
 {
 	// animated entity spec
 	{
@@ -195,7 +195,7 @@ VueMasterImageROMSpec VUE_MASTER_IMAGE_46_EN =
 			NULL,
 
 			// sprites
-			(SpriteSpec**)VUE_MASTER_IMAGE_46_SPRITES,
+			(SpriteSpec**)VueMasterImage46Sprites,
 
 			// use z displacement in projection
 			false,

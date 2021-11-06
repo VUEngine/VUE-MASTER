@@ -29,7 +29,7 @@ extern BYTE PressStartMap[];
 //---------------------------------------------------------------------------------------------------------
 
 // a function which defines the frames to play
-AnimationFunctionROMSpec PRESS_START_DEFAULT_ANIM =
+AnimationFunctionROMSpec PressStartDefaultAnimation =
 {
 	// number of frames of this animation function
 	2,
@@ -51,16 +51,16 @@ AnimationFunctionROMSpec PRESS_START_DEFAULT_ANIM =
 };
 
 // an animation spec
-AnimationDescriptionROMSpec PRESS_START_ANIM =
+AnimationDescriptionROMSpec PressStartAnimation =
 {
 	// animation functions
 	{
-		(AnimationFunction*)&PRESS_START_DEFAULT_ANIM,
+		(AnimationFunction*)&PressStartDefaultAnimation,
 		NULL,
 	}
 };
 
-CharSetROMSpec PRESS_START_CH =
+CharSetROMSpec PressStartCharset =
 {
 	// number of chars, depending on allocation type:
 	// __ANIMATED_SINGLE*, __ANIMATED_SHARED*: number of chars of a single animation frame (cols * rows)
@@ -75,10 +75,10 @@ CharSetROMSpec PRESS_START_CH =
 	PressStartTiles,
 };
 
-TextureROMSpec PRESS_START_TX =
+TextureROMSpec PressStartTexture =
 {
 	// charset spec
-	(CharSetSpec*)&PRESS_START_CH,
+	(CharSetSpec*)&PressStartCharset,
 
 	// bgmap spec
 	PressStartMap,
@@ -110,14 +110,14 @@ TextureROMSpec PRESS_START_TX =
 	false,
 };
 
-BgmapSpriteROMSpec PRESS_START_SP =
+BgmapSpriteROMSpec PressStartSprite =
 {
 	{
 		// sprite's type
 		__TYPE(BgmapAnimatedSprite),
 
 		// texture spec
-		(TextureSpec*)&PRESS_START_TX,
+		(TextureSpec*)&PressStartTexture,
 
 		// transparent (__TRANSPARENCY_NONE, __TRANSPARENCY_EVEN or __TRANSPARENCY_ODD)
 		__TRANSPARENCY_NONE,
@@ -137,13 +137,13 @@ BgmapSpriteROMSpec PRESS_START_SP =
 	__WORLD_ON,
 };
 
-BgmapSpriteROMSpec* const PRESS_START_SPRITES[] =
+BgmapSpriteROMSpec* const PressStartSprites[] =
 {
-	&PRESS_START_SP,
+	&PressStartSprite,
 	NULL
 };
 
-AnimatedEntityROMSpec PRESS_START_AE =
+AnimatedEntityROMSpec PressStartAe =
 {
 	{
 		// class allocator
@@ -159,7 +159,7 @@ AnimatedEntityROMSpec PRESS_START_AE =
 		NULL,
 
 		// sprites
-		(SpriteSpec**)PRESS_START_SPRITES,
+		(SpriteSpec**)PressStartSprites,
 
 		// use z displacement in projection
 		false,
@@ -179,7 +179,7 @@ AnimatedEntityROMSpec PRESS_START_AE =
 	},
 
 	// pointer to the animation spec for the item
-	(AnimationDescription*)&PRESS_START_ANIM,
+	(AnimationDescription*)&PressStartAnimation,
 
 	// initial animation
 	"Default",

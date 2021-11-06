@@ -7,8 +7,8 @@
  * that was distributed with this source code.
  */
 
-#ifndef VUE_MASTER_STATE_H_
-#define VUE_MASTER_STATE_H_
+#ifndef VueMasterStATE_H_
+#define VueMasterStATE_H_
 
 
 //---------------------------------------------------------------------------------------------------------

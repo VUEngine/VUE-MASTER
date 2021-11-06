@@ -28,7 +28,7 @@ extern BYTE HiColorSwitchMap[];
 //												DEFINITIONS
 //---------------------------------------------------------------------------------------------------------
 
-AnimationFunctionROMSpec HI_COLOR_SWITCH_HI_COLOR_ANIM =
+AnimationFunctionROMSpec HiColorSwitchHiColorAnimation =
 {
 	// number of frames of this animation function
 	2,
@@ -48,7 +48,7 @@ AnimationFunctionROMSpec HI_COLOR_SWITCH_HI_COLOR_ANIM =
 	// function's name
 	"HiColor",
 };
-AnimationFunctionROMSpec HI_COLOR_SWITCH_4_COLOR_ANIM =
+AnimationFunctionROMSpec HiColorSwitch4ColorAnimation =
 {
 	// number of frames of this animation function
 	1,
@@ -70,17 +70,17 @@ AnimationFunctionROMSpec HI_COLOR_SWITCH_4_COLOR_ANIM =
 };
 
 // an animation spec
-AnimationDescriptionROMSpec HI_COLOR_SWITCH_ANIM =
+AnimationDescriptionROMSpec HiColorSwitchAnimation =
 {
 	// animation functions
 	{
-		(AnimationFunction*)&HI_COLOR_SWITCH_HI_COLOR_ANIM,
-		(AnimationFunction*)&HI_COLOR_SWITCH_4_COLOR_ANIM,
+		(AnimationFunction*)&HiColorSwitchHiColorAnimation,
+		(AnimationFunction*)&HiColorSwitch4ColorAnimation,
 		NULL,
 	}
 };
 
-CharSetROMSpec HI_COLOR_SWITCH_CH =
+CharSetROMSpec HiColorSwitchCharset =
 {
 	// number of chars, depending on allocation type:
 	// __ANIMATED_SINGLE*, __ANIMATED_SHARED*: number of chars of a single animation frame (cols * rows)
@@ -95,10 +95,10 @@ CharSetROMSpec HI_COLOR_SWITCH_CH =
 	HiColorSwitchTiles,
 };
 
-TextureROMSpec HI_COLOR_SWITCH_TX =
+TextureROMSpec HiColorSwitchTexture =
 {
 	// charset spec
-	(CharSetSpec*)&HI_COLOR_SWITCH_CH,
+	(CharSetSpec*)&HiColorSwitchCharset,
 
 	// bgmap spec
 	HiColorSwitchMap,
@@ -130,14 +130,14 @@ TextureROMSpec HI_COLOR_SWITCH_TX =
 	false,
 };
 
-BgmapSpriteROMSpec HI_COLOR_SWITCH_SP =
+BgmapSpriteROMSpec HiColorSwitchSprite =
 {
 	{
 		// sprite's type
 		__TYPE(BgmapAnimatedSprite),
 
 		// texture spec
-		(TextureSpec*)&HI_COLOR_SWITCH_TX,
+		(TextureSpec*)&HiColorSwitchTexture,
 
 		// transparent (__TRANSPARENCY_NONE, __TRANSPARENCY_EVEN or __TRANSPARENCY_ODD)
 		__TRANSPARENCY_NONE,
@@ -157,13 +157,13 @@ BgmapSpriteROMSpec HI_COLOR_SWITCH_SP =
 	__WORLD_ON,
 };
 
-BgmapSpriteROMSpec* const HI_COLOR_SWITCH_SPRITES[] =
+BgmapSpriteROMSpec* const HiColorSwitchSprites[] =
 {
-	&HI_COLOR_SWITCH_SP,
+	&HiColorSwitchSprite,
 	NULL
 };
 
-AnimatedEntityROMSpec HI_COLOR_SWITCH_AE =
+AnimatedEntityROMSpec HiColorSwitchAe =
 {
 	{
 		// class allocator
@@ -179,7 +179,7 @@ AnimatedEntityROMSpec HI_COLOR_SWITCH_AE =
 		NULL,
 
 		// sprites
-		(SpriteSpec**)HI_COLOR_SWITCH_SPRITES,
+		(SpriteSpec**)HiColorSwitchSprites,
 
 		// use z displacement in projection
 		false,
@@ -199,7 +199,7 @@ AnimatedEntityROMSpec HI_COLOR_SWITCH_AE =
 	},
 
 	// pointer to the animation spec for the item
-	(AnimationDescription*)&HI_COLOR_SWITCH_ANIM,
+	(AnimationDescription*)&HiColorSwitchAnimation,
 
 	// initial animation
 	"HiColor",

@@ -29,7 +29,7 @@
 // 												DECLARATIONS
 //---------------------------------------------------------------------------------------------------------
 
-extern StageROMSpec TITLE_SCREEN_ST;
+extern StageROMSpec TitleScreenSt;
 
 
 //---------------------------------------------------------------------------------------------------------
@@ -64,7 +64,7 @@ void TitleScreenState::enter(void* owner __attribute__ ((unused)))
 	KeypadManager::registerInput(KeypadManager::getInstance(), __KEY_PRESSED | __KEY_RELEASED | __KEY_HOLD);
 
 	// load stage
-	GameState::loadStage(GameState::safeCast(this), (StageSpec*)&TITLE_SCREEN_ST, NULL, true, false);
+	GameState::loadStage(GameState::safeCast(this), (StageSpec*)&TitleScreenSt, NULL, true, false);
 
 	// get entities
 	this->hiColorEntity = AnimatedEntity::safeCast(Container::getChildByName(
