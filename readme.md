@@ -1,6 +1,6 @@
 # VUE-MASTER
 
-VUE-MASTER (read: "View Master") is a take on the classic toy stereo image viewer. It's a Virtual Boy stereo viewer by Stereo Boy and KR155E, containing 7 stereo images. First and foremost, though, it is meant as a VUEngine template which allows anyone to compile their own stereo images into a ROM to view on real Virtual Boy hardware, without any programming knowledge.
+VUE-MASTER (read: 'View Master') is a take on the classic toy stereo image viewer. It's a Virtual Boy stereo viewer by Stereo Boy and KR155E, containing several stereo images. First and foremost, though, it is meant as a VUEngine template which allows anyone to compile their own stereo images into a ROM to view on real Virtual Boy hardware, without any programming knowledge.
 
 
 LICENSE
