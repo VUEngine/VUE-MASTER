@@ -205,13 +205,16 @@ void VueMasterState::switchImage()
 	Entity::addSprites(Entity::safeCast(this->imageEntity), animatedEntitySpec->entitySpec.spriteSpecs);
 
 	this->currentIsVideo = (animatedEntitySpec->animationDescription != NULL);
-/*
-	// replace animation spec and play animation
-	AnimatedEntity::setAnimationDescription(this->imageEntity, animatedEntitySpec->animationDescription);
-	AnimatedEntity::playAnimation(this->imageEntity, animatedEntitySpec->initialAnimation);
-	this->animationPlaying = true;
-	VueMasterState::printVideoControls(this);
-*/
+
+	if(this->currentIsVideo)
+	{
+		// replace animation spec and play animation
+		AnimatedEntity::setAnimationDescription(this->imageEntity, animatedEntitySpec->animationDescription);
+		AnimatedEntity::playAnimation(this->imageEntity, animatedEntitySpec->initialAnimation);
+		this->animationPlaying = true;
+		VueMasterState::printVideoControls(this);
+	}
+	
 	// set color config
 	ColorConfig colorConfig = vueMasterImageSpec->colorConfig;
 	VueMasterState::setColorConfig(this, colorConfig);
