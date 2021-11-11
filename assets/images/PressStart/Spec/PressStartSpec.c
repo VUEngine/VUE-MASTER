@@ -143,7 +143,7 @@ BgmapSpriteROMSpec* const PressStartSprites[] =
 	NULL
 };
 
-AnimatedEntityROMSpec PressStartAe =
+AnimatedEntityROMSpec PressStartEntity =
 {
 	{
 		// class allocator

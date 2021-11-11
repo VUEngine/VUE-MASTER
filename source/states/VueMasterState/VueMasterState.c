@@ -100,6 +100,9 @@ void VueMasterState::enter(void* owner __attribute__ ((unused)))
 	AnimatedEntityROMSpec* animatedEntitySpec = (AnimatedEntitySpec*)&(vueMasterImageSpec->animatedEntitySpec);
 	this->currentIsVideo = (animatedEntitySpec->animationDescription != NULL);
 
+	// set coordinates of printing layer
+	Printing::setWorldCoordinates(Printing::getInstance(), 0, 0, -1, 0);
+
 	// print minimal gui
 	Printing::setPalette(Printing::getInstance(), 3);
 	VueMasterState::printImageNumber(this);
@@ -212,8 +215,8 @@ void VueMasterState::switchImage()
 		AnimatedEntity::setAnimationDescription(this->imageEntity, animatedEntitySpec->animationDescription);
 		AnimatedEntity::playAnimation(this->imageEntity, animatedEntitySpec->initialAnimation);
 		this->animationPlaying = true;
-		VueMasterState::printVideoControls(this);
 	}
+	VueMasterState::printVideoControls(this);
 	
 	// set color config
 	ColorConfig colorConfig = vueMasterImageSpec->colorConfig;
@@ -291,8 +294,8 @@ void VueMasterState::processUserInput(UserInput userInput)
 				AnimatedEntity::pauseAnimation(AnimatedEntity::safeCast(this->imageEntity), true);
 				//AnimatedEntity::playAnimation(AnimatedEntity::safeCast(this->arrowsEntity), "Visible");
 				this->animationPlaying = !this->animationPlaying;
-				VueMasterState::printVideoControls(this);
 			}
+			VueMasterState::printVideoControls(this);
 
 			// show next frame
 			AnimatedEntity::nextFrame(AnimatedEntity::safeCast(this->imageEntity));
@@ -308,8 +311,8 @@ void VueMasterState::processUserInput(UserInput userInput)
 				AnimatedEntity::pauseAnimation(AnimatedEntity::safeCast(this->imageEntity), true);
 				//AnimatedEntity::playAnimation(AnimatedEntity::safeCast(this->arrowsEntity), "Visible");
 				this->animationPlaying = !this->animationPlaying;
-				VueMasterState::printVideoControls(this);
 			}
+			VueMasterState::printVideoControls(this);
 
 			// show previous frame
 			AnimatedEntity::previousFrame(AnimatedEntity::safeCast(this->imageEntity));

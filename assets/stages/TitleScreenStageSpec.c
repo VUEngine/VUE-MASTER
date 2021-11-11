@@ -22,9 +22,9 @@
 
 extern FontSpec DefaultFont;
 extern EntitySpec CreditsEntity;
-extern EntitySpec HiColorSwitchAe;
-extern EntitySpec LogoAe;
-extern EntitySpec PressStartAe;
+extern EntitySpec HiColorSwitchEntity;
+extern EntitySpec LogoEntity;
+extern EntitySpec PressStartEntity;
 
 
 //---------------------------------------------------------------------------------------------------------
@@ -33,10 +33,10 @@ extern EntitySpec PressStartAe;
 
 PositionedEntityROMSpec TitleScreenStChildren[] =
 {
-	{&LogoAe, 				{186,  52, 0, 0}, 0, "Logo", NULL, NULL, false},
-	{&PressStartAe, 		{192, 164, 0, 0}, 0, "PrssStrt", NULL, NULL, false},
-	{&HiColorSwitchAe, 		{360, 196, 0, 0}, 0, "HiColor", NULL, NULL, false},
-	{&CreditsEntity, 		{176, 212, 0, 0}, 0, NULL, NULL, NULL, false},
+	{&LogoEntity, 				{186,  52, 0, 0}, 0, "Logo", NULL, NULL, false},
+	{&PressStartEntity, 		{192, 164, 0, 0}, 0, "PrssStrt", NULL, NULL, false},
+	//{&HiColorSwitchEntity, 		{360, 196, 0, 0}, 0, "HiColor", NULL, NULL, false},
+	{&CreditsEntity, 			{192, 212, 0, 0}, 0, NULL, NULL, NULL, false},
 
 	{NULL,{0,0,0,0}, 0, NULL, NULL, NULL, false},
 };

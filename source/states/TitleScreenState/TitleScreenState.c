@@ -107,7 +107,7 @@ void TitleScreenState::enter(void* owner __attribute__ ((unused)))
 		false
 	);
 	Vector3D localPosition = {
-		__PIXELS_TO_METERS(192),
+		__PIXELS_TO_METERS(196),
 		__PIXELS_TO_METERS(128 + ((strReelTitleSize.y  + strReelCreditsSize.y) << 3)),
 		__PIXELS_TO_METERS(0),
 	};
@@ -146,12 +146,12 @@ void TitleScreenState::processUserInput(UserInput userInput)
 			Object::safeCast(this) // callback scope
 		);
 	}
-	else if(userInput.pressedKey & (K_LL|K_RL|K_LR|K_RR))
+	/* else if(userInput.pressedKey & (K_LL|K_RL|K_LR|K_RR))
 	{
 		this->hiColorMode = !this->hiColorMode;
 		AnimatedEntity::playAnimation(this->hiColorEntity, this->hiColorMode ? "HiColor" : "4Color");
 		AnimatedEntity::playAnimation(this->logoEntity, this->hiColorMode ? "HiColor" : "4Color");
-	}
+	} */
 }
 
 void TitleScreenState::onFadeInComplete(Object eventFirer __attribute__ ((unused)))

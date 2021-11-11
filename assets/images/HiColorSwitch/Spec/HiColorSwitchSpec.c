@@ -163,7 +163,7 @@ BgmapSpriteROMSpec* const HiColorSwitchSprites[] =
 	NULL
 };
 
-AnimatedEntityROMSpec HiColorSwitchAe =
+AnimatedEntityROMSpec HiColorSwitchEntity =
 {
 	{
 		// class allocator

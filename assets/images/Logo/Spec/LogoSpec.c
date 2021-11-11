@@ -250,7 +250,7 @@ BgmapSpriteROMSpec* const LogoSprites[] =
 	NULL
 };
 
-AnimatedEntityROMSpec LogoAe =
+AnimatedEntityROMSpec LogoEntity =
 {
 	{
 		// class allocator
