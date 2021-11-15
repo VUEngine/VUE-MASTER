@@ -36,9 +36,5 @@
 			"uninitializedData": ".sbss",
 			"virtualTables": ".dram_bss"
 		}
-	},
-	"plugins": [
-		"vuengine//other/I18n",
-		"vuengine//states/splash/AdjustmentScreenVUEngine"
-	]
+	}
 }
