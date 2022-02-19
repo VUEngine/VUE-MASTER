@@ -24,9 +24,9 @@
 // 												DECLARATIONS
 //---------------------------------------------------------------------------------------------------------
 
-extern BYTE VueMasterImage8Tiles[];
-extern BYTE VueMasterImage8LMap[];
-extern BYTE VueMasterImage8RMap[];
+extern uint32 VueMasterImage8Tiles[];
+extern uint16 VueMasterImage8LMap[];
+extern uint16 VueMasterImage8RMap[];
 
 
 //---------------------------------------------------------------------------------------------------------
@@ -46,6 +46,9 @@ CharSetROMSpec VueMasterImage8Charset =
 
 	// char spec
 	VueMasterImage8Tiles,
+
+	// pointer to the frames offsets
+	NULL,
 };
 
 TextureROMSpec VueMasterImage8LeftTexture =

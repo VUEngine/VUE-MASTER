@@ -23,10 +23,12 @@
 //												DECLARATIONS
 //---------------------------------------------------------------------------------------------------------
 
-extern BYTE VueMasterImage11LTiles[];
-extern BYTE VueMasterImage11LMap[];
-extern BYTE VueMasterImage11RTiles[];
-extern BYTE VueMasterImage11RMap[];
+extern uint32 VueMasterImage11LTiles[];
+extern uint32 VueMasterImage11RTiles[];
+extern uint32 VueMasterImage11LTilesFrameOffsets[];
+extern uint32 VueMasterImage11RTilesFrameOffsets[];
+extern uint16 VueMasterImage11LMap[];
+extern uint16 VueMasterImage11RMap[];
 
 
 //---------------------------------------------------------------------------------------------------------
@@ -80,6 +82,9 @@ CharSetROMSpec VueMasterImage11LCharset =
 
 	// char spec
 	VueMasterImage11LTiles,
+
+	// pointer to the frames offsets
+	VueMasterImage11LTilesFrameOffsets,
 };
 
 TextureROMSpec VueMasterImage11LTexture =
@@ -157,6 +162,9 @@ CharSetROMSpec VueMasterImage11RCharset =
 
 	// char spec
 	VueMasterImage11RTiles,
+
+	// pointer to the frames offsets
+	VueMasterImage11RTilesFrameOffsets,
 };
 
 TextureROMSpec VueMasterImage11RTexture =

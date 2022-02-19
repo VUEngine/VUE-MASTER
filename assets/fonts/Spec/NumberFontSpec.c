@@ -13,7 +13,7 @@
 //                                              DECLARATIONS                                               
 //---------------------------------------------------------------------------------------------------------
 
-extern BYTE GuiFontTiles[];
+extern uint32 GuiFontTiles[];
 
 
 //---------------------------------------------------------------------------------------------------------
@@ -30,6 +30,9 @@ CharSetROMSpec NumberFontCharSet =
 
 	// char spec
 	GuiFontTiles,
+
+	// pointer to the frames offsets
+	NULL,
 };
 
 FontROMSpec NumberFont =

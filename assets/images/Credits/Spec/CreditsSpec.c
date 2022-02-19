@@ -19,8 +19,8 @@
 //												DECLARATIONS
 //---------------------------------------------------------------------------------------------------------
 
-extern BYTE CreditsTiles[];
-extern BYTE CreditsMap[];
+extern uint32 CreditsTiles[];
+extern uint16 CreditsMap[];
 
 
 //---------------------------------------------------------------------------------------------------------
@@ -40,6 +40,9 @@ CharSetROMSpec CreditsCharset =
 
 	// char spec
 	CreditsTiles,
+
+	// pointer to the frames offsets
+	NULL,
 };
 
 TextureROMSpec CreditsTexture =

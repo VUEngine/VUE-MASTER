@@ -20,8 +20,9 @@
 //												DECLARATIONS
 //---------------------------------------------------------------------------------------------------------
 
-extern BYTE HiColorSwitchTiles[];
-extern BYTE HiColorSwitchMap[];
+extern uint32 HiColorSwitchTiles[];
+extern uint32 HiColorSwitchTilesFrameOffsets[];
+extern uint16 HiColorSwitchMap[];
 
 
 //---------------------------------------------------------------------------------------------------------
@@ -93,6 +94,9 @@ CharSetROMSpec HiColorSwitchCharset =
 
 	// char spec
 	HiColorSwitchTiles,
+
+	// pointer to the frames offsets
+	HiColorSwitchTilesFrameOffsets,
 };
 
 TextureROMSpec HiColorSwitchTexture =

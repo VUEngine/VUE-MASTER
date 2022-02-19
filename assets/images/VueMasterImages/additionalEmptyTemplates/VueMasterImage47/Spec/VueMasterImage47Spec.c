@@ -24,9 +24,9 @@
 // 												DECLARATIONS
 //---------------------------------------------------------------------------------------------------------
 
-extern BYTE VueMasterImage47Tiles[];
-extern BYTE VueMasterImage47LMap[];
-extern BYTE VueMasterImage47RMap[];
+extern uint32 VueMasterImage47Tiles[];
+extern uint16 VueMasterImage47LMap[];
+extern uint16 VueMasterImage47RMap[];
 
 
 //---------------------------------------------------------------------------------------------------------
@@ -46,6 +46,9 @@ CharSetROMSpec VueMasterImage47Charset =
 
 	// char spec
 	VueMasterImage47Tiles,
+
+	// pointer to the frames offsets
+	NULL,
 };
 
 TextureROMSpec VueMasterImage47LeftTexture =

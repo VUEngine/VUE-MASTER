@@ -24,11 +24,11 @@
 // 												DECLARATIONS
 //---------------------------------------------------------------------------------------------------------
 
-extern BYTE VueMasterImage10Tiles[];
-extern BYTE VueMasterImage10L1Map[];
-extern BYTE VueMasterImage10L2Map[];
-extern BYTE VueMasterImage10R1Map[];
-extern BYTE VueMasterImage10R2Map[];
+extern uint32 VueMasterImage10Tiles[];
+extern uint16 VueMasterImage10L1Map[];
+extern uint16 VueMasterImage10L2Map[];
+extern uint16 VueMasterImage10R1Map[];
+extern uint16 VueMasterImage10R2Map[];
 
 
 //---------------------------------------------------------------------------------------------------------
@@ -48,6 +48,9 @@ CharSetROMSpec VueMasterImage10Charset =
 
 	// char spec
 	VueMasterImage10Tiles,
+
+	// pointer to the frames offsets
+	NULL,
 };
 
 TextureROMSpec VueMasterImage10Left1Texture =

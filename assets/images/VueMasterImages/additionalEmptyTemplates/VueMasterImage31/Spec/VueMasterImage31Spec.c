@@ -24,9 +24,9 @@
 // 												DECLARATIONS
 //---------------------------------------------------------------------------------------------------------
 
-extern BYTE VueMasterImage31Tiles[];
-extern BYTE VueMasterImage31LMap[];
-extern BYTE VueMasterImage31RMap[];
+extern uint32 VueMasterImage31Tiles[];
+extern uint16 VueMasterImage31LMap[];
+extern uint16 VueMasterImage31RMap[];
 
 
 //---------------------------------------------------------------------------------------------------------
@@ -46,6 +46,9 @@ CharSetROMSpec VueMasterImage31Charset =
 
 	// char spec
 	VueMasterImage31Tiles,
+
+	// pointer to the frames offsets
+	NULL,
 };
 
 TextureROMSpec VueMasterImage31LeftTexture =

@@ -24,9 +24,9 @@
 // 												DECLARATIONS
 //---------------------------------------------------------------------------------------------------------
 
-extern BYTE VueMasterImage21Tiles[];
-extern BYTE VueMasterImage21LMap[];
-extern BYTE VueMasterImage21RMap[];
+extern uint32 VueMasterImage21Tiles[];
+extern uint16 VueMasterImage21LMap[];
+extern uint16 VueMasterImage21RMap[];
 
 
 //---------------------------------------------------------------------------------------------------------
@@ -46,6 +46,9 @@ CharSetROMSpec VueMasterImage21Charset =
 
 	// char spec
 	VueMasterImage21Tiles,
+
+	// pointer to the frames offsets
+	NULL,
 };
 
 TextureROMSpec VueMasterImage21LeftTexture =
